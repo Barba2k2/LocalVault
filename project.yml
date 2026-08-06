@@ -7,12 +7,16 @@ settings:
   base:
     SWIFT_VERSION: "6.0"
     DEVELOPMENT_TEAM: ""
+    INDENT_WIDTH: 2
+    TAB_WIDTH: 2
+    USE_TABS: NO
 targets:
   LocalVault:
     type: application
     platform: macOS
     sources:
       - path: LocalVault
+        type: group
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.barba.localvault
@@ -32,3 +36,4 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.barba.localvault.tests
+        GENERATE_INFOPLIST_FILE: YES
