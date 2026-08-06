@@ -4,6 +4,7 @@ import Testing
 @testable import LocalVault
 
 struct LocalVaultTests {
+  @MainActor
   @Test func appModuleLoads() {
     _ = ContentView()
   }
