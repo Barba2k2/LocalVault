@@ -95,4 +95,23 @@ struct LocalVaultTests {
 
     #expect(rejectedKey)
   }
+
+  @Test func keychainStoreCreatesReadsAndDeletesVaultKey() throws {
+    let store = KeychainVaultKeyStore(
+      service: "com.barba.localvault.tests.\(UUID().uuidString)",
+      account: "vault-key"
+    )
+    defer { try? store.deleteKey() }
+
+    let createdKey = try store.createKeyIfNeeded()
+    let readKey = try store.readKey()
+    let repeatedKey = try store.createKeyIfNeeded()
+
+    #expect(createdKey.count == 32)
+    #expect(readKey == createdKey)
+    #expect(repeatedKey == createdKey)
+
+    try store.deleteKey()
+    #expect(try store.readKey() == nil)
+  }
 }
