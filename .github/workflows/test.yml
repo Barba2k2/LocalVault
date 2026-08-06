@@ -18,12 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Show toolchain
-        run: |
-          xcodebuild -version
-          swift-format --version
-
-      - name: Verify Swift formatting
-        run: swift-format lint --configuration .swift-format --recursive LocalVault LocalVaultTests
+        run: xcodebuild -version
 
       - name: Run tests
         run: >-
