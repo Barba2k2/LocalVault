@@ -10,6 +10,9 @@ enum VaultError: Error, Equatable, Sendable {
   case authenticationFailed
   case corruptedCiphertext
   case encryptionFailed
+  case invalidStoredData
+  case unsupportedSchemaVersion
+  case persistenceFailure
   case invalidBackup
   case unsupportedBackupVersion
   case corruptedBackup
