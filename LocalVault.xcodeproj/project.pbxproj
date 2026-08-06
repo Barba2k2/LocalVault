@@ -1,0 +1,393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437BB79A7F5422EDC71B5E2 /* ContentView.swift */; };
+		A963B4406CE7444EA4D1AD38 /* LocalVaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986220EADA94CBA484B003B /* LocalVaultTests.swift */; };
+		F8C83CEF8200892545514427 /* LocalVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0034BD84C3A647FE192E5451 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 597E56CF2499E83235DE9B7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4556A9020D598C5B1C43A6BA;
+			remoteInfo = LocalVault;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6422821C3833831AABCF183C /* LocalVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultApp.swift; sourceTree = "<group>"; };
+		C986220EADA94CBA484B003B /* LocalVaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultTests.swift; sourceTree = "<group>"; };
+		F437BB79A7F5422EDC71B5E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		15B941ACA5AB8201230F7CB8 /* LocalVault */ = {
+			isa = PBXGroup;
+			children = (
+				F437BB79A7F5422EDC71B5E2 /* ContentView.swift */,
+				C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */,
+			);
+			path = LocalVault;
+			sourceTree = "<group>";
+		};
+		41ABF67241F718E088D21B07 = {
+			isa = PBXGroup;
+			children = (
+				15B941ACA5AB8201230F7CB8 /* LocalVault */,
+				862A1507F7BD0C8E09695F57 /* LocalVaultTests */,
+				A285145FFFDB82BA423F9968 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		862A1507F7BD0C8E09695F57 /* LocalVaultTests */ = {
+			isa = PBXGroup;
+			children = (
+				C986220EADA94CBA484B003B /* LocalVaultTests.swift */,
+			);
+			path = LocalVaultTests;
+			sourceTree = "<group>";
+		};
+		A285145FFFDB82BA423F9968 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6422821C3833831AABCF183C /* LocalVault.app */,
+				A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4556A9020D598C5B1C43A6BA /* LocalVault */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CE0AEDB110D6259D7A80081 /* Build configuration list for PBXNativeTarget "LocalVault" */;
+			buildPhases = (
+				E6928B9D4A62B94D07595876 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocalVault;
+			packageProductDependencies = (
+			);
+			productName = LocalVault;
+			productReference = 6422821C3833831AABCF183C /* LocalVault.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B33B045365258DE720A20507 /* LocalVaultTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94DC644336572D8E45786CFE /* Build configuration list for PBXNativeTarget "LocalVaultTests" */;
+			buildPhases = (
+				0CC2D5926CA546E6BE11B3E9 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95B994FB283D28786E713421 /* PBXTargetDependency */,
+			);
+			name = LocalVaultTests;
+			packageProductDependencies = (
+			);
+			productName = LocalVaultTests;
+			productReference = A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		597E56CF2499E83235DE9B7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4556A9020D598C5B1C43A6BA = {
+						DevelopmentTeam = "";
+					};
+					B33B045365258DE720A20507 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = 2F93A79ACC3602B1DF7D0F7F /* Build configuration list for PBXProject "LocalVault" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 41ABF67241F718E088D21B07;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A285145FFFDB82BA423F9968 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4556A9020D598C5B1C43A6BA /* LocalVault */,
+				B33B045365258DE720A20507 /* LocalVaultTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0CC2D5926CA546E6BE11B3E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A963B4406CE7444EA4D1AD38 /* LocalVaultTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6928B9D4A62B94D07595876 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */,
+				F8C83CEF8200892545514427 /* LocalVaultApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95B994FB283D28786E713421 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4556A9020D598C5B1C43A6BA /* LocalVault */;
+			targetProxy = 0034BD84C3A647FE192E5451 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3C5802A1F3FC8729882BF6ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barba.localvault.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocalVault.app/Contents/MacOS/LocalVault";
+			};
+			name = Release;
+		};
+		ADCBB4EF04A97338849A94E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barba.localvault;
+				PRODUCT_NAME = LocalVault;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AF3A241E7966CCCEAB4F395A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barba.localvault;
+				PRODUCT_NAME = LocalVault;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EECC3F1955973A995A296B99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		F52C6E6FB33B528BF367FEDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barba.localvault.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocalVault.app/Contents/MacOS/LocalVault";
+			};
+			name = Debug;
+		};
+		F9AEC93DCDE2C84CF515E43D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F93A79ACC3602B1DF7D0F7F /* Build configuration list for PBXProject "LocalVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9AEC93DCDE2C84CF515E43D /* Debug */,
+				EECC3F1955973A995A296B99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3CE0AEDB110D6259D7A80081 /* Build configuration list for PBXNativeTarget "LocalVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF3A241E7966CCCEAB4F395A /* Debug */,
+				ADCBB4EF04A97338849A94E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		94DC644336572D8E45786CFE /* Build configuration list for PBXNativeTarget "LocalVaultTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F52C6E6FB33B528BF367FEDE /* Debug */,
+				3C5802A1F3FC8729882BF6ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 597E56CF2499E83235DE9B7C /* Project object */;
+}
