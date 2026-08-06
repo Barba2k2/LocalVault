@@ -1,0 +1,40 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+  pull_request:
+    branches:
+      - develop
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Swift tests
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          swift-format --version
+
+      - name: Verify Swift formatting
+        run: swift-format lint --configuration .swift-format --recursive LocalVault LocalVaultTests
+
+      - name: Run tests
+        run: >-
+          xcodebuild test
+          -project LocalVault.xcodeproj
+          -scheme LocalVault
+          -destination 'platform=macOS,arch=arm64'
+          CODE_SIGNING_ALLOWED=NO
+          CODE_SIGNING_REQUIRED=NO
