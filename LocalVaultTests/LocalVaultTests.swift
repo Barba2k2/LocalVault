@@ -114,4 +114,61 @@ struct LocalVaultTests {
     try store.deleteKey()
     #expect(try store.readKey() == nil)
   }
+
+  @Test func encryptedRepositoryPersistsCRUDWithoutPlaintext() async throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let fileURL = directory.appendingPathComponent("vault.localvault")
+    let keyStore = KeychainVaultKeyStore(
+      service: "com.barba.localvault.tests.\(UUID().uuidString)",
+      account: "vault-key"
+    )
+    let repository = EncryptedCredentialRepository(fileURL: fileURL, keyStore: keyStore)
+    let credential = Credential(
+      title: "Example",
+      username: "user@example.com",
+      password: "never-readable",
+      notes: "private"
+    )
+    defer {
+      try? keyStore.deleteKey()
+      try? FileManager.default.removeItem(at: directory)
+    }
+
+    try await repository.save(credential)
+    #expect(try await repository.find(id: credential.id) == credential)
+
+    let storedBytes = try Data(contentsOf: fileURL)
+    #expect(String(data: storedBytes, encoding: .utf8)?.contains("never-readable") == false)
+    #expect(String(data: storedBytes, encoding: .utf8)?.contains("Example") == false)
+
+    var updated = credential
+    updated.password = "updated-secret"
+    try await repository.save(updated)
+    #expect(try await repository.list() == [updated])
+
+    try await repository.delete(id: credential.id)
+    #expect(try await repository.list().isEmpty)
+  }
+
+  @Test func encryptedRepositoryRejectsUnsupportedSchemaVersion() async throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let fileURL = directory.appendingPathComponent("vault.localvault")
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    let invalidFile = ["schemaVersion": 999, "ciphertext": ""] as [String: Any]
+    let invalidData = try JSONSerialization.data(withJSONObject: invalidFile)
+    try invalidData.write(to: fileURL)
+    defer { try? FileManager.default.removeItem(at: directory) }
+
+    let repository = EncryptedCredentialRepository(fileURL: fileURL)
+    var rejectedVersion = false
+    do {
+      _ = try await repository.list()
+    } catch VaultError.unsupportedSchemaVersion {
+      rejectedVersion = true
+    }
+
+    #expect(rejectedVersion)
+  }
 }
