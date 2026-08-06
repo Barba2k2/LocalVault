@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D5A36E93E65E2C14CE9483E /* VaultProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5A761C0D2ED382FF6CB5E /* VaultProtocols.swift */; };
+		41BBE941C245482966C452E2 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B71E450E7FF5987B4A066 /* Credential.swift */; };
+		5092B96121CBC9B96ED64232 /* VaultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB8FA2B3CC016695856DF99 /* VaultError.swift */; };
 		5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437BB79A7F5422EDC71B5E2 /* ContentView.swift */; };
 		A963B4406CE7444EA4D1AD38 /* LocalVaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986220EADA94CBA484B003B /* LocalVaultTests.swift */; };
 		F8C83CEF8200892545514427 /* LocalVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B7B71E450E7FF5987B4A066 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		10E5A761C0D2ED382FF6CB5E /* VaultProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultProtocols.swift; sourceTree = "<group>"; };
+		1CB8FA2B3CC016695856DF99 /* VaultError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultError.swift; sourceTree = "<group>"; };
 		6422821C3833831AABCF183C /* LocalVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultApp.swift; sourceTree = "<group>"; };
@@ -36,8 +42,19 @@
 			children = (
 				F437BB79A7F5422EDC71B5E2 /* ContentView.swift */,
 				C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */,
+				256226563CA78BD9E4E1BBBD /* Domain */,
 			);
 			path = LocalVault;
+			sourceTree = "<group>";
+		};
+		256226563CA78BD9E4E1BBBD /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0B7B71E450E7FF5987B4A066 /* Credential.swift */,
+				1CB8FA2B3CC016695856DF99 /* VaultError.swift */,
+				10E5A761C0D2ED382FF6CB5E /* VaultProtocols.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		41ABF67241F718E088D21B07 = {
@@ -155,7 +172,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */,
+				41BBE941C245482966C452E2 /* Credential.swift in Sources */,
 				F8C83CEF8200892545514427 /* LocalVaultApp.swift in Sources */,
+				5092B96121CBC9B96ED64232 /* VaultError.swift in Sources */,
+				2D5A36E93E65E2C14CE9483E /* VaultProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +195,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -266,6 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INDENT_WIDTH = 2;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -274,6 +296,8 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.0;
+				TAB_WIDTH = 2;
+				USE_TABS = NO;
 			};
 			name = Release;
 		};
@@ -282,6 +306,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -345,6 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INDENT_WIDTH = 2;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -354,6 +380,8 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
+				TAB_WIDTH = 2;
+				USE_TABS = NO;
 			};
 			name = Debug;
 		};
