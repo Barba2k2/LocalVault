@@ -171,4 +171,41 @@ struct LocalVaultTests {
 
     #expect(rejectedVersion)
   }
+
+  @MainActor
+  @Test func lockControllerStartsLockedAndUnlocksAfterAuthentication() async {
+    let controller = VaultLockController(authenticator: TestAuthenticator(result: .success))
+
+    #expect(controller.state == .locked)
+    await controller.unlock()
+    #expect(controller.state == .unlocked)
+
+    controller.lock()
+    #expect(controller.isLocked)
+  }
+
+  @MainActor
+  @Test func lockControllerFailsClosedAfterAuthenticationFailure() async {
+    let controller = VaultLockController(authenticator: TestAuthenticator(result: .failure))
+
+    await controller.unlock()
+
+    #expect(controller.state == .locked)
+    #expect(controller.isLocked)
+  }
+}
+
+private struct TestAuthenticator: BiometricAuthenticator {
+  enum Result: Equatable, Sendable {
+    case success
+    case failure
+  }
+
+  let result: Result
+
+  func authenticate(reason: String) async throws {
+    if result == .failure {
+      throw VaultError.authenticationFailed
+    }
+  }
 }
