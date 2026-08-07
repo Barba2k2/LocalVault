@@ -26,5 +26,4 @@ jobs:
           -project LocalVault.xcodeproj
           -scheme LocalVault
           -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5'
-          CODE_SIGNING_ALLOWED=NO
           CODE_SIGNING_REQUIRED=NO
