@@ -40,6 +40,26 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.barba.localvault.tests
         GENERATE_INFOPLIST_FILE: YES
+  LocalVaultAutoFill:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: LocalVault/Domain
+      - path: LocalVault/Infrastructure
+        excludes:
+          - ClipboardManager.swift
+          - CredentialIdentityStoreIndex.swift
+          - VaultLockController.swift
+      - path: LocalVaultAutoFill
+        excludes:
+          - Info.plist
+          - LocalVaultAutoFill.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.barba.localvault.autofill
+        PRODUCT_NAME: LocalVaultAutoFill
+        INFOPLIST_FILE: LocalVaultAutoFill/Info.plist
+        CODE_SIGN_ENTITLEMENTS: LocalVaultAutoFill/LocalVaultAutoFill.entitlements
   LocalVaultMac:
     type: application
     platform: macOS
