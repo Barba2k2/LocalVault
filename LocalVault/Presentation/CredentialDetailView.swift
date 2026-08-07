@@ -33,6 +33,7 @@ struct CredentialDetailView: View {
             isPasswordVisible.toggle()
           }
           .buttonStyle(.borderless)
+          .accessibilityHint("Controls whether the password is visible")
         }
         if let url = credential.url {
           Link(url.absoluteString, destination: url)
@@ -61,6 +62,7 @@ struct CredentialDetailView: View {
         } label: {
           Image(systemName: "ellipsis.circle")
         }
+        .accessibilityLabel("Credential actions")
       }
     }
     .sheet(isPresented: $isEditing) {
@@ -88,5 +90,6 @@ struct CredentialDetailView: View {
     }
     .buttonStyle(.borderless)
     .accessibilityLabel("Copy \(field)")
+    .accessibilityHint("Copies the \(field) to the clipboard and clears it automatically")
   }
 }
