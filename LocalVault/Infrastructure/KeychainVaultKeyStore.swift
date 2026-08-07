@@ -53,7 +53,7 @@ struct KeychainVaultKeyStore: KeychainStore {
 
     var attributes = baseQuery()
     attributes[kSecValueData] = bytes
-    attributes[kSecAttrAccessible] = kSecAttrAccessibleWhenUnlocked
+    attributes[kSecAttrAccessible] = kSecAttrAccessibleWhenUnlockedThisDeviceOnly
 
     let status = SecItemAdd(attributes as CFDictionary, nil)
     switch status {

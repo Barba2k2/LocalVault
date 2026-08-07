@@ -33,6 +33,7 @@ struct ContentView: View {
 
   private var vaultContent: some View {
     CredentialListView()
+      .privacySensitive()
   }
 }
 
