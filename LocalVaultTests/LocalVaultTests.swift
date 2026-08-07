@@ -329,6 +329,29 @@ struct LocalVaultTests {
     viewModel.query = "work"
     #expect(viewModel.visibleCredentials.map(\.title) == ["Alpha"])
   }
+
+  @MainActor
+  @Test func credentialListSearchesFiveThousandCredentialsWithinTarget() async {
+    let credentials = (0..<5_000).map { index in
+      Credential(
+        title: "Credential \(index)",
+        username: "user\(index)",
+        password: "secret\(index)"
+      )
+    }
+    let repository = TestCredentialRepository(credentials: credentials)
+    let viewModel = CredentialListViewModel(repository: repository)
+
+    await viewModel.refresh()
+    let start = ContinuousClock.now
+    viewModel.query = "Credential 4999"
+    let matches = viewModel.visibleCredentials
+    let elapsed = start.duration(to: .now)
+
+    #expect(matches.count == 1)
+    #expect(matches.first?.title == "Credential 4999")
+    #expect(elapsed < .milliseconds(250))
+  }
 }
 
 private struct TestAuthenticator: BiometricAuthenticator {

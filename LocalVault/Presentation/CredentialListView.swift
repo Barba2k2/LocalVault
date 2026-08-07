@@ -30,16 +30,19 @@ struct CredentialListView: View {
           }
         } else if viewModel.visibleCredentials.isEmpty {
           ContentUnavailableView.search(text: viewModel.query)
+            .accessibilityLabel("No credentials found")
         } else {
           List(viewModel.visibleCredentials) { credential in
             NavigationLink(value: credential.id) {
               CredentialRow(credential: credential)
             }
+            .accessibilityHint("Double tap to view credential details")
           }
         }
       }
       .navigationTitle("LocalVault")
       .searchable(text: $viewModel.query, prompt: "Search credentials")
+      .accessibilityLabel("Search credentials")
       .navigationDestination(for: UUID.self) { id in
         if let credential = viewModel.credentials.first(where: { $0.id == id }) {
           CredentialDetailView(credential: credential)
@@ -108,6 +111,7 @@ private struct VaultOnboardingView: View {
       }
       .buttonStyle(.borderedProminent)
       .disabled(isInitializing)
+      .accessibilityHint("Creates an encrypted vault stored only on this device")
     }
     .padding(32)
     .frame(maxWidth: 520)
@@ -133,5 +137,9 @@ private struct CredentialRow: View {
       }
     }
     .privacySensitive()
+    .accessibilityElement(children: .combine)
+    .accessibilityLabel(
+      credential.username.isEmpty ? credential.title : "\(credential.title), \(credential.username)"
+    )
   }
 }
