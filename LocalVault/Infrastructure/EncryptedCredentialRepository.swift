@@ -60,6 +60,16 @@ actor EncryptedCredentialRepository: CredentialRepository {
     try persist(credentials)
   }
 
+  func replaceAll(_ credentials: [Credential]) async throws {
+    guard credentials.allSatisfy({
+      !$0.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }) else {
+      throw VaultError.invalidCredentialTitle
+    }
+
+    try persist(credentials)
+  }
+
   func delete(id: UUID) async throws {
     var credentials = try loadCredentials()
     credentials.removeAll { $0.id == id }

@@ -6,6 +6,7 @@ protocol CredentialRepository: Sendable {
   func list() async throws -> [Credential]
   func find(id: UUID) async throws -> Credential?
   func save(_ credential: Credential) async throws
+  func replaceAll(_ credentials: [Credential]) async throws
   func delete(id: UUID) async throws
 }
 
