@@ -33,7 +33,6 @@
 		C798A9D9C1909C88D54C0902 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802E8C8A7AD502E87055CAF /* SettingsView.swift */; };
 		D06440ED8915BBF3953F8D60 /* CSVDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3EB96F7CCCE6AF42D9B29 /* CSVDocument.swift */; };
 		DE1738CB79E0609ED27E7396 /* EncryptedCredentialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */; };
-		F0A3E03305D17C9604516FE7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7C3694884D0360FBBC6F5A56 /* PrivacyInfo.xcprivacy */; };
 		F8C83CEF8200892545514427 /* LocalVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,6 @@
 		67B5A887797F8BDFF7A36797 /* BackupEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEnvelope.swift; sourceTree = "<group>"; };
 		6FEDA289193D8EA3CDB24ED3 /* CSVExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExportView.swift; sourceTree = "<group>"; };
 		755063B99A783FB520DAE651 /* CSVServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVServiceImpl.swift; sourceTree = "<group>"; };
-		7C3694884D0360FBBC6F5A56 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		8EFB2AC61E928051E047DE9F /* BackupExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupExportView.swift; sourceTree = "<group>"; };
 		A0F3EB96F7CCCE6AF42D9B29 /* CSVDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDocument.swift; sourceTree = "<group>"; };
 		A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LocalVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +84,6 @@
 			children = (
 				F437BB79A7F5422EDC71B5E2 /* ContentView.swift */,
 				C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */,
-				7C3694884D0360FBBC6F5A56 /* PrivacyInfo.xcprivacy */,
 				5BC28073040AA325FDCE6C5F /* Application */,
 				256226563CA78BD9E4E1BBBD /* Domain */,
 				B671EC4D3844DA46953418F7 /* Infrastructure */,
@@ -181,7 +178,6 @@
 			buildConfigurationList = 3CE0AEDB110D6259D7A80081 /* Build configuration list for PBXNativeTarget "LocalVault" */;
 			buildPhases = (
 				E6928B9D4A62B94D07595876 /* Sources */,
-				0A44B1D0D261283EA6464155 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -248,17 +244,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		0A44B1D0D261283EA6464155 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0A3E03305D17C9604516FE7 /* PrivacyInfo.xcprivacy in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0CC2D5926CA546E6BE11B3E9 /* Sources */ = {
