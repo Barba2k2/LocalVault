@@ -22,6 +22,7 @@ protocol KeychainStore: Sendable {
 }
 
 protocol BiometricAuthenticator: Sendable {
+  @MainActor
   func authenticate(reason: String) async throws
 }
 
