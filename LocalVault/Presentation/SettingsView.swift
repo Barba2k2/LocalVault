@@ -9,6 +9,7 @@ struct SettingsView: View {
 
   @State private var showDeleteConfirmation = false
   @State private var isDeleting = false
+  @State private var showExport = false
 
   var body: some View {
     NavigationStack {
@@ -36,6 +37,17 @@ struct SettingsView: View {
           .foregroundStyle(.secondary)
         }
 
+        Section("Backup") {
+          Button("Export Encrypted Backup", systemImage: "arrow.down.doc") {
+            showExport = true
+          }
+          Text(
+            "Export creates a password-protected .localvault file. The password cannot be recovered."
+          )
+          .font(.footnote)
+          .foregroundStyle(.secondary)
+        }
+
         Section("Danger Zone") {
           Button("Delete Entire Vault", role: .destructive) {
             showDeleteConfirmation = true
@@ -49,6 +61,9 @@ struct SettingsView: View {
         }
       }
       .navigationTitle("Settings")
+      .sheet(isPresented: $showExport) {
+        BackupExportView()
+      }
       .toolbar {
         ToolbarItem(placement: .confirmationAction) {
           Button("Done") { dismiss() }

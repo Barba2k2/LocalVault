@@ -161,6 +161,33 @@ struct LocalVaultTests {
     #expect(rejectedNonce)
   }
 
+  @Test func encryptedBackupRoundTripsCredentials() throws {
+    let credentials = [Credential(title: "Example", password: "secret")]
+    let service = EncryptedBackupService()
+    let backup = try service.makeBackup(from: credentials, password: "correct horse")
+
+    #expect(try service.restoreCredentials(from: backup, password: "correct horse") == credentials)
+    #expect(String(data: backup, encoding: .utf8)?.contains("secret") == false)
+  }
+
+  @Test func encryptedBackupRejectsWrongPassword() throws {
+    let service = EncryptedBackupService()
+    let backup = try service.makeBackup(
+      from: [Credential(title: "Example", password: "secret")],
+      password: "correct horse"
+    )
+    var rejected = false
+    do {
+      _ = try service.restoreCredentials(from: backup, password: "wrong horse")
+    } catch BackupServiceError.authenticationFailed {
+      rejected = true
+    } catch {
+      rejected = false
+    }
+
+    #expect(rejected)
+  }
+
   @Test func keychainStoreCreatesReadsAndDeletesVaultKey() throws {
     let store = KeychainVaultKeyStore(
       service: "com.barba.localvault.tests.\(UUID().uuidString)",
