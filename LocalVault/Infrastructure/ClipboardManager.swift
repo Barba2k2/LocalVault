@@ -28,6 +28,11 @@ final class ClipboardManager: ObservableObject {
     Task { [weak self] in
       try? await Task.sleep(for: .seconds(expiration))
       guard let self, self.copyToken == token else { return }
+      guard UIPasteboard.general.string == value else {
+        copiedField = nil
+        copyToken = nil
+        return
+      }
       UIPasteboard.general.items = []
       copiedField = nil
       copyToken = nil
