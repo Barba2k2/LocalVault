@@ -39,3 +39,21 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.barba.localvault.tests
         GENERATE_INFOPLIST_FILE: YES
+  LocalVaultMac:
+    type: application
+    platform: macOS
+    sources:
+      - path: LocalVault/Domain
+      - path: LocalVault/Application
+      - path: LocalVault/ContentView.swift
+      - path: LocalVault/Infrastructure
+        excludes:
+          - ClipboardManager.swift
+      - path: LocalVault/Presentation
+      - path: LocalVaultMac
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.barba.localvault.macos
+        PRODUCT_NAME: LocalVault
+        INFOPLIST_KEY_LSUIElement: YES
+        GENERATE_INFOPLIST_FILE: YES
