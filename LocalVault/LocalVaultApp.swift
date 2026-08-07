@@ -10,19 +10,18 @@ struct LocalVaultApp: App {
   @StateObject private var listViewModel: CredentialListViewModel
 
   init() {
-    let applicationSupport = FileManager.default.urls(
-      for: .applicationSupportDirectory,
-      in: .userDomainMask
-    )[0]
-    let vaultURL =
-      applicationSupport
-      .appendingPathComponent("LocalVault", isDirectory: true)
-      .appendingPathComponent("vault.localvault")
     let repository = EncryptedCredentialRepository(
-      fileURL: vaultURL,
-      keyStore: KeychainVaultKeyStore()
+      fileURL: SharedVaultConfiguration.iOSVaultURL(),
+      keyStore: KeychainVaultKeyStore(
+        accessGroup: SharedVaultConfiguration.keychainAccessGroup
+      )
     )
-    _listViewModel = StateObject(wrappedValue: CredentialListViewModel(repository: repository))
+    _listViewModel = StateObject(
+      wrappedValue: CredentialListViewModel(
+        repository: repository,
+        identityIndex: CredentialIdentityStoreIndex()
+      )
+    )
   }
 
   var body: some Scene {

@@ -11,15 +11,18 @@ final class CredentialListViewModel: ObservableObject {
   private let repository: any CredentialRepository
   private let backupService: any BackupService
   private let csvService: any CSVService
+  private let identityIndex: any CredentialIdentityIndex
 
   init(
     repository: any CredentialRepository,
     backupService: any BackupService = EncryptedBackupService(),
-    csvService: any CSVService = CSVServiceImpl()
+    csvService: any CSVService = CSVServiceImpl(),
+    identityIndex: any CredentialIdentityIndex = NoopCredentialIdentityIndex()
   ) {
     self.repository = repository
     self.backupService = backupService
     self.csvService = csvService
+    self.identityIndex = identityIndex
   }
 
   var visibleCredentials: [Credential] {
@@ -55,6 +58,7 @@ final class CredentialListViewModel: ObservableObject {
 
     do {
       credentials = try await repository.list()
+      try await identityIndex.reconcile(credentials)
     } catch let vaultError as VaultError {
       error = vaultError
     } catch {
@@ -65,6 +69,7 @@ final class CredentialListViewModel: ObservableObject {
   func initializeVault() async -> Bool {
     do {
       try await repository.initialize()
+      try await identityIndex.reconcile([])
       error = nil
       return true
     } catch let vaultError as VaultError {
@@ -79,6 +84,7 @@ final class CredentialListViewModel: ObservableObject {
     do {
       try await repository.deleteVault()
       credentials = []
+      try await identityIndex.reconcile([])
       error = nil
       return true
     } catch let vaultError as VaultError {

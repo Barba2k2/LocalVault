@@ -24,6 +24,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.barba.localvault
         PRODUCT_NAME: LocalVault
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
+        CODE_SIGN_ENTITLEMENTS: LocalVault/LocalVault.entitlements
         GENERATE_INFOPLIST_FILE: YES
     scheme:
       testTargets:
@@ -49,6 +50,7 @@ targets:
       - path: LocalVault/Infrastructure
         excludes:
           - ClipboardManager.swift
+          - CredentialIdentityStoreIndex.swift
       - path: LocalVault/Presentation
       - path: LocalVaultMac
     settings:
@@ -67,6 +69,7 @@ targets:
         excludes:
           - ClipboardManager.swift
           - LocalAuthenticationAuthenticator.swift
+          - CredentialIdentityStoreIndex.swift
           - VaultLockController.swift
       - path: LocalVaultMacAutoFill
         excludes:
