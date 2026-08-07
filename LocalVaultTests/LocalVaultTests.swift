@@ -188,6 +188,21 @@ struct LocalVaultTests {
     #expect(rejected)
   }
 
+  @Test func csvRoundTripsEscapedFieldsAndReportsInvalidRows() throws {
+    let service = CSVServiceImpl()
+    let csv = try service.export([
+      Credential(
+        title: "Example, Inc.", username: "user", password: "p\"ass", notes: "line 1\nline 2")
+    ])
+    let result = try service.preview(
+      csv + Data("\n,missing,password,,notes,category\r\n".utf8)
+    )
+    #expect(result.invalidRows.count == 1)
+    #expect(result.credentials.count == 1)
+    #expect(result.credentials.first?.title == "Example, Inc.")
+    #expect(result.credentials.first?.password == "p\"ass")
+  }
+
   @Test func keychainStoreCreatesReadsAndDeletesVaultKey() throws {
     let store = KeychainVaultKeyStore(
       service: "com.barba.localvault.tests.\(UUID().uuidString)",
