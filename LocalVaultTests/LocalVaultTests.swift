@@ -129,6 +129,38 @@ struct LocalVaultTests {
     #expect(rejected)
   }
 
+  @Test func backupEnvelopeRoundTripsAndExcludesPassword() throws {
+    let envelope = try BackupEnvelope(
+      salt: Data(repeating: 0x01, count: BackupEnvelope.saltLength),
+      nonce: Data(repeating: 0x02, count: BackupEnvelope.nonceLength),
+      ciphertext: Data(repeating: 0x03, count: BackupEnvelope.authenticationTagLength)
+    )
+    let data = try JSONEncoder().encode(envelope)
+    let decoded = try JSONDecoder().decode(BackupEnvelope.self, from: data)
+
+    #expect(decoded == envelope)
+    #expect(String(data: data, encoding: .utf8)?.contains("password") == false)
+    #expect(envelope.kdf == "PBKDF2-HMAC-SHA256")
+    #expect(envelope.iterations == 600_000)
+  }
+
+  @Test func backupEnvelopeRejectsMalformedCryptographicFields() {
+    var rejectedNonce = false
+    do {
+      _ = try BackupEnvelope(
+        salt: Data(repeating: 0x01, count: BackupEnvelope.saltLength),
+        nonce: Data(repeating: 0x02, count: 8),
+        ciphertext: Data(repeating: 0x03, count: BackupEnvelope.authenticationTagLength)
+      )
+    } catch BackupFormatError.invalidNonce {
+      rejectedNonce = true
+    } catch {
+      rejectedNonce = false
+    }
+
+    #expect(rejectedNonce)
+  }
+
   @Test func keychainStoreCreatesReadsAndDeletesVaultKey() throws {
     let store = KeychainVaultKeyStore(
       service: "com.barba.localvault.tests.\(UUID().uuidString)",
