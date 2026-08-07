@@ -12,6 +12,7 @@
 		41BBE941C245482966C452E2 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B71E450E7FF5987B4A066 /* Credential.swift */; };
 		5092B96121CBC9B96ED64232 /* VaultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB8FA2B3CC016695856DF99 /* VaultError.swift */; };
 		56B06F754B34332A73CDA777 /* CredentialListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C720B583198EA39B838778 /* CredentialListViewModel.swift */; };
+		5877BEB31D0DB8774F9BE20D /* ClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF392E880931A9B3F90702B /* ClipboardManager.swift */; };
 		5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437BB79A7F5422EDC71B5E2 /* ContentView.swift */; };
 		5A4B3177290AE9DB64F2428F /* KeychainVaultKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */; };
 		74F06E869818CC497B5F384D /* CredentialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5C1AD03141A481C6AC7CE2 /* CredentialDetailView.swift */; };
@@ -50,6 +51,7 @@
 		C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultApp.swift; sourceTree = "<group>"; };
 		C986220EADA94CBA484B003B /* LocalVaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultTests.swift; sourceTree = "<group>"; };
 		D12CACDA4A8A4495A59B46B1 /* VaultLockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultLockController.swift; sourceTree = "<group>"; };
+		DCF392E880931A9B3F90702B /* ClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardManager.swift; sourceTree = "<group>"; };
 		EE5C1AD03141A481C6AC7CE2 /* CredentialDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialDetailView.swift; sourceTree = "<group>"; };
 		F437BB79A7F5422EDC71B5E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 		B671EC4D3844DA46953418F7 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				DCF392E880931A9B3F90702B /* ClipboardManager.swift */,
 				64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */,
 				A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */,
 				38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5877BEB31D0DB8774F9BE20D /* ClipboardManager.swift in Sources */,
 				5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */,
 				41BBE941C245482966C452E2 /* Credential.swift in Sources */,
 				74F06E869818CC497B5F384D /* CredentialDetailView.swift in Sources */,
