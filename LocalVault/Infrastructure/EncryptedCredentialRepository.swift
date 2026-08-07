@@ -2,6 +2,7 @@ import Foundation
 
 actor EncryptedCredentialRepository: CredentialRepository {
   private static let currentSchemaVersion = 1
+  private static let maximumCredentialCount = 100_000
 
   private struct VaultFile: Codable {
     let schemaVersion: Int
@@ -94,7 +95,15 @@ actor EncryptedCredentialRepository: CredentialRepository {
       }
 
       let plaintext = try cryptoService.decrypt(vaultFile.ciphertext, using: key)
-      return try JSONDecoder().decode([Credential].self, from: plaintext)
+      let credentials = try JSONDecoder().decode([Credential].self, from: plaintext)
+      guard credentials.count <= Self.maximumCredentialCount,
+        credentials.allSatisfy({
+          !$0.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        })
+      else {
+        throw VaultError.invalidStoredData
+      }
+      return credentials
     } catch let error as VaultError {
       throw error
     } catch {

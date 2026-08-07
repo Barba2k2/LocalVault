@@ -188,6 +188,26 @@ struct LocalVaultTests {
     #expect(rejected)
   }
 
+  @Test func encryptedBackupRejectsCorruptedPayload() throws {
+    let service = EncryptedBackupService()
+    var backup = try service.makeBackup(
+      from: [Credential(title: "Example", password: "secret")],
+      password: "correct horse"
+    )
+    backup[backup.index(before: backup.endIndex)] ^= 0x01
+
+    var rejected = false
+    do {
+      _ = try service.restoreCredentials(from: backup, password: "correct horse")
+    } catch BackupServiceError.authenticationFailed {
+      rejected = true
+    } catch {
+      rejected = false
+    }
+
+    #expect(rejected)
+  }
+
   @Test func csvRoundTripsEscapedFieldsAndReportsInvalidRows() throws {
     let service = CSVServiceImpl()
     let csv = try service.export([
@@ -277,6 +297,33 @@ struct LocalVaultTests {
     }
 
     #expect(rejectedVersion)
+  }
+
+  @Test func encryptedRepositoryFailsClosedWhenVaultKeyIsMissing() async throws {
+    let directory = FileManager.default.temporaryDirectory
+      .appendingPathComponent(UUID().uuidString, isDirectory: true)
+    let fileURL = directory.appendingPathComponent("vault.localvault")
+    let keyStore = KeychainVaultKeyStore(
+      service: "com.barba.localvault.tests.\(UUID().uuidString)",
+      account: "vault-key"
+    )
+    let repository = EncryptedCredentialRepository(fileURL: fileURL, keyStore: keyStore)
+    defer {
+      try? keyStore.deleteKey()
+      try? FileManager.default.removeItem(at: directory)
+    }
+
+    try await repository.save(Credential(title: "Example", password: "secret"))
+    try keyStore.deleteKey()
+
+    var rejected = false
+    do {
+      _ = try await repository.list()
+    } catch VaultError.keyUnavailable {
+      rejected = true
+    }
+
+    #expect(rejected)
   }
 
   @MainActor
