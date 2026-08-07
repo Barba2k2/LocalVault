@@ -7,18 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0287F9BCDE80014FF488F527 /* EncryptedBackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F3213CBCBF0E12BA4FF61 /* EncryptedBackupService.swift */; };
 		107B091AD0B20AF7550A7045 /* EncryptedBackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F3213CBCBF0E12BA4FF61 /* EncryptedBackupService.swift */; };
-		13648F18AE817D5F8477B673 /* CSVModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2769783698D6DB8A772C0 /* CSVModels.swift */; };
 		145B4D8CF2B8916CA158F5F6 /* CSVServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755063B99A783FB520DAE651 /* CSVServiceImpl.swift */; };
 		1CD6DE2A5310547F1194A402 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */; };
-		1E9FBAE965B7F924B84725D8 /* CredentialListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C720B583198EA39B838778 /* CredentialListViewModel.swift */; };
-		1EA595161B883F186A192C95 /* CSVDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3EB96F7CCCE6AF42D9B29 /* CSVDocument.swift */; };
-		2874F3D7F6AA5EB6262DBB81 /* EncryptedCredentialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */; };
 		2D5A36E93E65E2C14CE9483E /* VaultProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5A761C0D2ED382FF6CB5E /* VaultProtocols.swift */; };
-		2D687537DC3723A3F82CF510 /* KeychainVaultKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */; };
 		35CE8D811B204500A1E44599 /* CredentialEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F052259945716F3890815A /* CredentialEditorView.swift */; };
-		40DD32F05D4369F197D4ECAB /* CSVImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69D836D3E282E318DF821D /* CSVImportView.swift */; };
 		410B97B080043548776C615F /* CSVExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEDA289193D8EA3CDB24ED3 /* CSVExportView.swift */; };
 		41BBE941C245482966C452E2 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B71E450E7FF5987B4A066 /* Credential.swift */; };
 		5092B96121CBC9B96ED64232 /* VaultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB8FA2B3CC016695856DF99 /* VaultError.swift */; };
@@ -26,41 +19,21 @@
 		5877BEB31D0DB8774F9BE20D /* ClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF392E880931A9B3F90702B /* ClipboardManager.swift */; };
 		5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437BB79A7F5422EDC71B5E2 /* ContentView.swift */; };
 		5A4B3177290AE9DB64F2428F /* KeychainVaultKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */; };
-		64549CD0A8EDB6CAB41D620D /* VaultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB8FA2B3CC016695856DF99 /* VaultError.swift */; };
 		74F06E869818CC497B5F384D /* CredentialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5C1AD03141A481C6AC7CE2 /* CredentialDetailView.swift */; };
 		782481248ECB33BBB5A5BCE8 /* BackupEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B5A887797F8BDFF7A36797 /* BackupEnvelope.swift */; };
 		786BB0F5FE1706136AE767F2 /* CryptoKitVaultCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */; };
-		796CEBD3D2F395AB9CE62E52 /* VaultLockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CACDA4A8A4495A59B46B1 /* VaultLockController.swift */; };
 		7A44C8A690AFE4B79E39C31E /* CredentialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD692770EAC7EC11429DAD55 /* CredentialListView.swift */; };
 		7D1923E129BA649BB8224007 /* CSVModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2769783698D6DB8A772C0 /* CSVModels.swift */; };
-		82FCFFF3EF01E623C0A0E092 /* BackupExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB2AC61E928051E047DE9F /* BackupExportView.swift */; };
-		863489469B9C14A3D642FA94 /* LocalVaultMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A35468B909E419FABC0DF9 /* LocalVaultMacApp.swift */; };
-		866AE0309D0F0FDFBFC61835 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B71E450E7FF5987B4A066 /* Credential.swift */; };
-		8D77D741B87EAD3231821BCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437BB79A7F5422EDC71B5E2 /* ContentView.swift */; };
-		93BF0210B72424959F2BD717 /* BackupDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6D861444B2C1477170F82 /* BackupDocument.swift */; };
-		996C60169FE067933C325B6F /* BackupEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B5A887797F8BDFF7A36797 /* BackupEnvelope.swift */; };
 		A0255062BEEEB2B404ECEE15 /* CSVImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69D836D3E282E318DF821D /* CSVImportView.swift */; };
 		A5AB760526D860813C48601B /* BackupExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB2AC61E928051E047DE9F /* BackupExportView.swift */; };
 		A886D267FC97BD61F0BD7587 /* BackupDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6D861444B2C1477170F82 /* BackupDocument.swift */; };
 		A963B4406CE7444EA4D1AD38 /* LocalVaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986220EADA94CBA484B003B /* LocalVaultTests.swift */; };
-		AABFC0C43421422CFB03F315 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802E8C8A7AD502E87055CAF /* SettingsView.swift */; };
-		AF03B33D34DAA3E2C51A532B /* CredentialEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F052259945716F3890815A /* CredentialEditorView.swift */; };
-		B00529FF3A2975E85B90FB4E /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */; };
-		B343F014C22D8D30367CBFFA /* MacClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10176D3DE4BA3A5BB80255E1 /* MacClipboardManager.swift */; };
-		B46F984B47AE4FE395DFBEBC /* CredentialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD692770EAC7EC11429DAD55 /* CredentialListView.swift */; };
 		B48774DE3AD0FBB8460DF824 /* VaultLockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CACDA4A8A4495A59B46B1 /* VaultLockController.swift */; };
-		B7E0D93BD216FBBE4DA4D769 /* CredentialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5C1AD03141A481C6AC7CE2 /* CredentialDetailView.swift */; };
 		BB8FC9BD0C6A3C390BC210BC /* LocalAuthenticationAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A6F683E060B6B6C943D58 /* LocalAuthenticationAuthenticator.swift */; };
-		BFCB8B738C5AF5F97DDAC08F /* LocalAuthenticationAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A6F683E060B6B6C943D58 /* LocalAuthenticationAuthenticator.swift */; };
-		C0C64559605F953C5F5815AD /* CSVServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755063B99A783FB520DAE651 /* CSVServiceImpl.swift */; };
-		C18B3DA781C54D0BBC6DA7A3 /* CryptoKitVaultCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */; };
 		C798A9D9C1909C88D54C0902 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802E8C8A7AD502E87055CAF /* SettingsView.swift */; };
 		D06440ED8915BBF3953F8D60 /* CSVDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3EB96F7CCCE6AF42D9B29 /* CSVDocument.swift */; };
-		D0D806B7D8EC48AEA660A441 /* CSVExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEDA289193D8EA3CDB24ED3 /* CSVExportView.swift */; };
 		DE1738CB79E0609ED27E7396 /* EncryptedCredentialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */; };
 		E7472DA6425E5A7AFA6D8D4C /* BackupImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2F11D16231FA21961EC596 /* BackupImportView.swift */; };
-		EE1C59932FA13FE2CF805B8E /* BackupImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2F11D16231FA21961EC596 /* BackupImportView.swift */; };
-		F038DA22A7E3F8EB7B7FDA3B /* VaultProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5A761C0D2ED382FF6CB5E /* VaultProtocols.swift */; };
 		F0A3E03305D17C9604516FE7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7C3694884D0360FBBC6F5A56 /* PrivacyInfo.xcprivacy */; };
 		F8C83CEF8200892545514427 /* LocalVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */; };
 /* End PBXBuildFile section */
@@ -78,15 +51,12 @@
 /* Begin PBXFileReference section */
 		0802E8C8A7AD502E87055CAF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0B7B71E450E7FF5987B4A066 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
-		10176D3DE4BA3A5BB80255E1 /* MacClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacClipboardManager.swift; sourceTree = "<group>"; };
 		10E5A761C0D2ED382FF6CB5E /* VaultProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultProtocols.swift; sourceTree = "<group>"; };
 		1CB8FA2B3CC016695856DF99 /* VaultError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultError.swift; sourceTree = "<group>"; };
 		22C720B583198EA39B838778 /* CredentialListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialListViewModel.swift; sourceTree = "<group>"; };
 		38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainVaultKeyStore.swift; sourceTree = "<group>"; };
 		3EE6D861444B2C1477170F82 /* BackupDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupDocument.swift; sourceTree = "<group>"; };
-		41A35468B909E419FABC0DF9 /* LocalVaultMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultMacApp.swift; sourceTree = "<group>"; };
 		4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
-		5004537E683908AC971ADD7F /* LocalVaultMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalVaultMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		581F3213CBCBF0E12BA4FF61 /* EncryptedBackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedBackupService.swift; sourceTree = "<group>"; };
 		6422821C3833831AABCF183C /* LocalVault.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LocalVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoKitVaultCryptoService.swift; sourceTree = "<group>"; };
@@ -143,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				15B941ACA5AB8201230F7CB8 /* LocalVault */,
-				85D1582C09C5D85DFD7494AC /* LocalVaultMac */,
 				862A1507F7BD0C8E09695F57 /* LocalVaultTests */,
 				A285145FFFDB82BA423F9968 /* Products */,
 			);
@@ -155,15 +124,6 @@
 				22C720B583198EA39B838778 /* CredentialListViewModel.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		85D1582C09C5D85DFD7494AC /* LocalVaultMac */ = {
-			isa = PBXGroup;
-			children = (
-				41A35468B909E419FABC0DF9 /* LocalVaultMacApp.swift */,
-				10176D3DE4BA3A5BB80255E1 /* MacClipboardManager.swift */,
-			);
-			path = LocalVaultMac;
 			sourceTree = "<group>";
 		};
 		862A1507F7BD0C8E09695F57 /* LocalVaultTests */ = {
@@ -178,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				6422821C3833831AABCF183C /* LocalVault.app */,
-				5004537E683908AC971ADD7F /* LocalVaultMac.app */,
 				A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */,
 			);
 			name = Products;
@@ -220,23 +179,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		216FE3E89C03E0BA10A105C3 /* LocalVaultMac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8E22E3C2A08233D803A13DFA /* Build configuration list for PBXNativeTarget "LocalVaultMac" */;
-			buildPhases = (
-				511A0201D839421EBFC1E448 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LocalVaultMac;
-			packageProductDependencies = (
-			);
-			productName = LocalVaultMac;
-			productReference = 5004537E683908AC971ADD7F /* LocalVaultMac.app */;
-			productType = "com.apple.product-type.application";
-		};
 		4556A9020D598C5B1C43A6BA /* LocalVault */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CE0AEDB110D6259D7A80081 /* Build configuration list for PBXNativeTarget "LocalVault" */;
@@ -282,9 +224,6 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					216FE3E89C03E0BA10A105C3 = {
-						DevelopmentTeam = "";
-					};
 					4556A9020D598C5B1C43A6BA = {
 						DevelopmentTeam = "";
 					};
@@ -309,7 +248,6 @@
 			targets = (
 				4556A9020D598C5B1C43A6BA /* LocalVault */,
 				B33B045365258DE720A20507 /* LocalVaultTests */,
-				216FE3E89C03E0BA10A105C3 /* LocalVaultMac */,
 			);
 		};
 /* End PBXProject section */
@@ -331,40 +269,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A963B4406CE7444EA4D1AD38 /* LocalVaultTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		511A0201D839421EBFC1E448 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93BF0210B72424959F2BD717 /* BackupDocument.swift in Sources */,
-				996C60169FE067933C325B6F /* BackupEnvelope.swift in Sources */,
-				82FCFFF3EF01E623C0A0E092 /* BackupExportView.swift in Sources */,
-				EE1C59932FA13FE2CF805B8E /* BackupImportView.swift in Sources */,
-				1EA595161B883F186A192C95 /* CSVDocument.swift in Sources */,
-				D0D806B7D8EC48AEA660A441 /* CSVExportView.swift in Sources */,
-				40DD32F05D4369F197D4ECAB /* CSVImportView.swift in Sources */,
-				13648F18AE817D5F8477B673 /* CSVModels.swift in Sources */,
-				C0C64559605F953C5F5815AD /* CSVServiceImpl.swift in Sources */,
-				8D77D741B87EAD3231821BCC /* ContentView.swift in Sources */,
-				866AE0309D0F0FDFBFC61835 /* Credential.swift in Sources */,
-				B7E0D93BD216FBBE4DA4D769 /* CredentialDetailView.swift in Sources */,
-				AF03B33D34DAA3E2C51A532B /* CredentialEditorView.swift in Sources */,
-				B46F984B47AE4FE395DFBEBC /* CredentialListView.swift in Sources */,
-				1E9FBAE965B7F924B84725D8 /* CredentialListViewModel.swift in Sources */,
-				C18B3DA781C54D0BBC6DA7A3 /* CryptoKitVaultCryptoService.swift in Sources */,
-				0287F9BCDE80014FF488F527 /* EncryptedBackupService.swift in Sources */,
-				2874F3D7F6AA5EB6262DBB81 /* EncryptedCredentialRepository.swift in Sources */,
-				2D687537DC3723A3F82CF510 /* KeychainVaultKeyStore.swift in Sources */,
-				BFCB8B738C5AF5F97DDAC08F /* LocalAuthenticationAuthenticator.swift in Sources */,
-				863489469B9C14A3D642FA94 /* LocalVaultMacApp.swift in Sources */,
-				B343F014C22D8D30367CBFFA /* MacClipboardManager.swift in Sources */,
-				B00529FF3A2975E85B90FB4E /* PasswordGenerator.swift in Sources */,
-				AABFC0C43421422CFB03F315 /* SettingsView.swift in Sources */,
-				64549CD0A8EDB6CAB41D620D /* VaultError.swift in Sources */,
-				796CEBD3D2F395AB9CE62E52 /* VaultLockController.swift in Sources */,
-				F038DA22A7E3F8EB7B7FDA3B /* VaultProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,40 +333,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocalVault.app/LocalVault";
 			};
 			name = Release;
-		};
-		5776A76A50B7F3754C80282D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				COMBINE_HIDPI_IMAGES = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_LSUIElement = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.barba.localvault.macos;
-				PRODUCT_NAME = LocalVault;
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		621E9D95C176A484DD4B5969 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				COMBINE_HIDPI_IMAGES = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_LSUIElement = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.barba.localvault.macos;
-				PRODUCT_NAME = LocalVault;
-				SDKROOT = macosx;
-			};
-			name = Debug;
 		};
 		ADCBB4EF04A97338849A94E3 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -551,6 +421,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.0;
@@ -634,6 +505,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -659,15 +531,6 @@
 			buildConfigurations = (
 				AF3A241E7966CCCEAB4F395A /* Debug */,
 				ADCBB4EF04A97338849A94E3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		8E22E3C2A08233D803A13DFA /* Build configuration list for PBXNativeTarget "LocalVaultMac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				621E9D95C176A484DD4B5969 /* Debug */,
-				5776A76A50B7F3754C80282D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
