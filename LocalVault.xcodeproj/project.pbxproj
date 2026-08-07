@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2D5A36E93E65E2C14CE9483E /* VaultProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5A761C0D2ED382FF6CB5E /* VaultProtocols.swift */; };
+		35CE8D811B204500A1E44599 /* CredentialEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F052259945716F3890815A /* CredentialEditorView.swift */; };
 		41BBE941C245482966C452E2 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B71E450E7FF5987B4A066 /* Credential.swift */; };
 		5092B96121CBC9B96ED64232 /* VaultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB8FA2B3CC016695856DF99 /* VaultError.swift */; };
 		56B06F754B34332A73CDA777 /* CredentialListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C720B583198EA39B838778 /* CredentialListViewModel.swift */; };
 		5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437BB79A7F5422EDC71B5E2 /* ContentView.swift */; };
 		5A4B3177290AE9DB64F2428F /* KeychainVaultKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */; };
+		74F06E869818CC497B5F384D /* CredentialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5C1AD03141A481C6AC7CE2 /* CredentialDetailView.swift */; };
 		786BB0F5FE1706136AE767F2 /* CryptoKitVaultCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */; };
 		7A44C8A690AFE4B79E39C31E /* CredentialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD692770EAC7EC11429DAD55 /* CredentialListView.swift */; };
 		A963B4406CE7444EA4D1AD38 /* LocalVaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986220EADA94CBA484B003B /* LocalVaultTests.swift */; };
@@ -44,9 +46,11 @@
 		A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedCredentialRepository.swift; sourceTree = "<group>"; };
 		AD692770EAC7EC11429DAD55 /* CredentialListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialListView.swift; sourceTree = "<group>"; };
 		B41A6F683E060B6B6C943D58 /* LocalAuthenticationAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationAuthenticator.swift; sourceTree = "<group>"; };
+		B4F052259945716F3890815A /* CredentialEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialEditorView.swift; sourceTree = "<group>"; };
 		C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultApp.swift; sourceTree = "<group>"; };
 		C986220EADA94CBA484B003B /* LocalVaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultTests.swift; sourceTree = "<group>"; };
 		D12CACDA4A8A4495A59B46B1 /* VaultLockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultLockController.swift; sourceTree = "<group>"; };
+		EE5C1AD03141A481C6AC7CE2 /* CredentialDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialDetailView.swift; sourceTree = "<group>"; };
 		F437BB79A7F5422EDC71B5E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +115,8 @@
 		AE8521D8E44EAAE61326A926 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EE5C1AD03141A481C6AC7CE2 /* CredentialDetailView.swift */,
+				B4F052259945716F3890815A /* CredentialEditorView.swift */,
 				AD692770EAC7EC11429DAD55 /* CredentialListView.swift */,
 			);
 			path = Presentation;
@@ -218,6 +224,8 @@
 			files = (
 				5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */,
 				41BBE941C245482966C452E2 /* Credential.swift in Sources */,
+				74F06E869818CC497B5F384D /* CredentialDetailView.swift in Sources */,
+				35CE8D811B204500A1E44599 /* CredentialEditorView.swift in Sources */,
 				7A44C8A690AFE4B79E39C31E /* CredentialListView.swift in Sources */,
 				56B06F754B34332A73CDA777 /* CredentialListViewModel.swift in Sources */,
 				786BB0F5FE1706136AE767F2 /* CryptoKitVaultCryptoService.swift in Sources */,
