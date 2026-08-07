@@ -10,6 +10,7 @@ struct SettingsView: View {
   @State private var showDeleteConfirmation = false
   @State private var isDeleting = false
   @State private var showExport = false
+  @State private var showImport = false
   @State private var showCSVExport = false
   @State private var showCSVImport = false
 
@@ -42,6 +43,9 @@ struct SettingsView: View {
         Section("Backup") {
           Button("Export Encrypted Backup", systemImage: "arrow.down.doc") {
             showExport = true
+          }
+          Button("Restore Encrypted Backup", systemImage: "arrow.up.doc") {
+            showImport = true
           }
           Text(
             "Export creates a password-protected .localvault file. The password cannot be recovered."
@@ -77,6 +81,9 @@ struct SettingsView: View {
       .navigationTitle("Settings")
       .sheet(isPresented: $showExport) {
         BackupExportView()
+      }
+      .sheet(isPresented: $showImport) {
+        BackupImportView()
       }
       .sheet(isPresented: $showCSVExport) {
         CSVExportView()

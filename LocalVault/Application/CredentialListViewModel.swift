@@ -102,6 +102,17 @@ final class CredentialListViewModel: ObservableObject {
     try csvService.preview(data)
   }
 
+  func previewBackup(_ data: Data, password: String) throws -> [Credential] {
+    try backupService.restoreCredentials(from: data, password: password)
+  }
+
+  func restoreBackup(_ data: Data, password: String) async throws -> Int {
+    let restoredCredentials = try backupService.restoreCredentials(from: data, password: password)
+    try await repository.replaceAll(restoredCredentials)
+    await refresh()
+    return restoredCredentials.count
+  }
+
   func importCredentials(_ credentials: [Credential]) async throws {
     for credential in credentials {
       try await repository.save(credential)

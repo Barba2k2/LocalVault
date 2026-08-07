@@ -331,6 +331,47 @@ struct LocalVaultTests {
   }
 
   @MainActor
+  @Test func restoreBackupReplacesVaultAfterValidation() async throws {
+    let previous = Credential(title: "Previous", password: "old")
+    let restored = Credential(title: "Restored", password: "new")
+    let repository = TestCredentialRepository(credentials: [previous])
+    let viewModel = CredentialListViewModel(repository: repository)
+    let backup = try EncryptedBackupService().makeBackup(
+      from: [restored],
+      password: "correct horse"
+    )
+
+    let count = try await viewModel.restoreBackup(backup, password: "correct horse")
+    let current = try await repository.list()
+
+    #expect(count == 1)
+    #expect(current == [restored])
+  }
+
+  @MainActor
+  @Test func failedBackupReplacementLeavesVaultUntouched() async throws {
+    let previous = Credential(title: "Previous", password: "old")
+    let restored = Credential(title: "Restored", password: "new")
+    let repository = TestCredentialRepository(credentials: [previous], failsReplacement: true)
+    let viewModel = CredentialListViewModel(repository: repository)
+    let backup = try EncryptedBackupService().makeBackup(
+      from: [restored],
+      password: "correct horse"
+    )
+
+    var failed = false
+    do {
+      _ = try await viewModel.restoreBackup(backup, password: "correct horse")
+    } catch VaultError.persistenceFailure {
+      failed = true
+    }
+
+    let current = try await repository.list()
+    #expect(failed)
+    #expect(current == [previous])
+  }
+
+  @MainActor
   @Test func credentialListSearchesFiveThousandCredentialsWithinTarget() async {
     let credentials = (0..<5_000).map { index in
       Credential(
@@ -370,10 +411,12 @@ private struct TestAuthenticator: BiometricAuthenticator {
 }
 
 private actor TestCredentialRepository: CredentialRepository {
-  let credentials: [Credential]
+  private var credentials: [Credential]
+  private let failsReplacement: Bool
 
-  init(credentials: [Credential]) {
+  init(credentials: [Credential], failsReplacement: Bool = false) {
     self.credentials = credentials
+    self.failsReplacement = failsReplacement
   }
 
   func initialize() async throws {}
@@ -389,6 +432,13 @@ private actor TestCredentialRepository: CredentialRepository {
   }
 
   func save(_ credential: Credential) async throws {}
+
+  func replaceAll(_ credentials: [Credential]) async throws {
+    if failsReplacement {
+      throw VaultError.persistenceFailure
+    }
+    self.credentials = credentials
+  }
 
   func delete(id: UUID) async throws {}
 }
