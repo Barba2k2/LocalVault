@@ -3,6 +3,7 @@ import SwiftUI
 struct CredentialDetailView: View {
   @EnvironmentObject private var viewModel: CredentialListViewModel
   @Environment(\.dismiss) private var dismiss
+  @StateObject private var clipboard = ClipboardManager()
 
   let credential: Credential
 
@@ -14,12 +15,20 @@ struct CredentialDetailView: View {
     List {
       Section("Credential") {
         LabeledContent("Title", value: credential.title)
-        LabeledContent("Username", value: credential.username.isEmpty ? "—" : credential.username)
+        HStack {
+          LabeledContent("Username", value: credential.username.isEmpty ? "—" : credential.username)
+          if !credential.username.isEmpty {
+            copyButton(for: "username", value: credential.username)
+          }
+        }
         HStack {
           Text("Password")
           Spacer()
           Text(isPasswordVisible ? credential.password : String(repeating: "•", count: 8))
             .privacySensitive()
+          if !credential.password.isEmpty {
+            copyButton(for: "password", value: credential.password)
+          }
           Button(isPasswordVisible ? "Hide" : "Show") {
             isPasswordVisible.toggle()
           }
@@ -71,5 +80,13 @@ struct CredentialDetailView: View {
         }
       }
     }
+  }
+
+  private func copyButton(for field: String, value: String) -> some View {
+    Button(clipboard.copiedField == field ? "Copied" : "Copy") {
+      clipboard.copy(value, field: field)
+    }
+    .buttonStyle(.borderless)
+    .accessibilityLabel("Copy \(field)")
   }
 }
