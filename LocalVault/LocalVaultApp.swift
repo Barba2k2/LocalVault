@@ -13,6 +13,7 @@ struct LocalVaultApp: App {
     let repository = EncryptedCredentialRepository(
       fileURL: SharedVaultConfiguration.iOSVaultURL(),
       keyStore: KeychainVaultKeyStore(
+        service: SharedVaultConfiguration.keychainService,
         accessGroup: SharedVaultConfiguration.keychainAccessGroup
       )
     )

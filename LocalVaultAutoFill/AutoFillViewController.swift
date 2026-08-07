@@ -7,7 +7,7 @@ final class AutoFillViewController: ASCredentialProviderViewController {
     EncryptedCredentialRepository(
       fileURL: SharedVaultConfiguration.iOSVaultURL(),
       keyStore: KeychainVaultKeyStore(
-        service: Bundle.main.bundleIdentifier ?? "com.barba.localvault",
+        service: SharedVaultConfiguration.keychainService,
         accessGroup: SharedVaultConfiguration.keychainAccessGroup
       )
     )
