@@ -17,6 +17,8 @@ targets:
     sources:
       - path: LocalVault
         type: group
+    resources:
+      - path: LocalVault/PrivacyInfo.xcprivacy
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.barba.localvault
