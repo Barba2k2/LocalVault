@@ -10,6 +10,8 @@ struct SettingsView: View {
   @State private var showDeleteConfirmation = false
   @State private var isDeleting = false
   @State private var showExport = false
+  @State private var showCSVExport = false
+  @State private var showCSVImport = false
 
   var body: some View {
     NavigationStack {
@@ -48,6 +50,18 @@ struct SettingsView: View {
           .foregroundStyle(.secondary)
         }
 
+        Section("CSV") {
+          Button("Export CSV", systemImage: "arrow.down.doc") {
+            showCSVExport = true
+          }
+          Button("Import CSV", systemImage: "arrow.up.doc") {
+            showCSVImport = true
+          }
+          Text("CSV is plaintext and is not a backup format.")
+            .font(.footnote)
+            .foregroundStyle(.secondary)
+        }
+
         Section("Danger Zone") {
           Button("Delete Entire Vault", role: .destructive) {
             showDeleteConfirmation = true
@@ -63,6 +77,12 @@ struct SettingsView: View {
       .navigationTitle("Settings")
       .sheet(isPresented: $showExport) {
         BackupExportView()
+      }
+      .sheet(isPresented: $showCSVExport) {
+        CSVExportView()
+      }
+      .sheet(isPresented: $showCSVImport) {
+        CSVImportView()
       }
       .toolbar {
         ToolbarItem(placement: .confirmationAction) {

@@ -10,13 +10,16 @@ final class CredentialListViewModel: ObservableObject {
 
   private let repository: any CredentialRepository
   private let backupService: any BackupService
+  private let csvService: any CSVService
 
   init(
     repository: any CredentialRepository,
-    backupService: any BackupService = EncryptedBackupService()
+    backupService: any BackupService = EncryptedBackupService(),
+    csvService: any CSVService = CSVServiceImpl()
   ) {
     self.repository = repository
     self.backupService = backupService
+    self.csvService = csvService
   }
 
   var visibleCredentials: [Credential] {
@@ -89,6 +92,21 @@ final class CredentialListViewModel: ObservableObject {
   func makeBackup(password: String) async throws -> Data {
     let credentials = try await repository.list()
     return try backupService.makeBackup(from: credentials, password: password)
+  }
+
+  func exportCSV() async throws -> Data {
+    try csvService.export(try await repository.list())
+  }
+
+  func previewCSV(_ data: Data) throws -> CSVImportResult {
+    try csvService.preview(data)
+  }
+
+  func importCredentials(_ credentials: [Credential]) async throws {
+    for credential in credentials {
+      try await repository.save(credential)
+    }
+    await refresh()
   }
 
   func save(_ credential: Credential) async -> Bool {
