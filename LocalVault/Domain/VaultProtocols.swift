@@ -1,6 +1,7 @@
 import Foundation
 
 protocol CredentialRepository: Sendable {
+  func initialize() async throws
   func list() async throws -> [Credential]
   func find(id: UUID) async throws -> Credential?
   func save(_ credential: Credential) async throws

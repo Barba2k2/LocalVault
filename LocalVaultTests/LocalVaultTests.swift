@@ -247,6 +247,8 @@ private actor TestCredentialRepository: CredentialRepository {
     self.credentials = credentials
   }
 
+  func initialize() async throws {}
+
   func list() async throws -> [Credential] {
     credentials
   }

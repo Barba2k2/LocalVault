@@ -22,6 +22,10 @@ actor EncryptedCredentialRepository: CredentialRepository {
     self.keyStore = keyStore
   }
 
+  func initialize() async throws {
+    try persist([])
+  }
+
   func list() async throws -> [Credential] {
     try loadCredentials()
   }

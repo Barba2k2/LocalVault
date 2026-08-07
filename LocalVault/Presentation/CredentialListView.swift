@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CredentialListView: View {
   @EnvironmentObject private var viewModel: CredentialListViewModel
+  @AppStorage("hasCompletedVaultOnboarding") private var hasCompletedOnboarding = false
   @State private var showNewCredential = false
 
   var body: some View {
@@ -9,6 +10,10 @@ struct CredentialListView: View {
       Group {
         if viewModel.isLoading {
           ProgressView("Loading credentials…")
+        } else if viewModel.credentials.isEmpty && !hasCompletedOnboarding {
+          VaultOnboardingView {
+            hasCompletedOnboarding = true
+          }
         } else if viewModel.credentials.isEmpty {
           VStack(spacing: 16) {
             ContentUnavailableView(
@@ -58,6 +63,44 @@ struct CredentialListView: View {
     .task {
       await viewModel.refresh()
     }
+  }
+}
+
+private struct VaultOnboardingView: View {
+  @EnvironmentObject private var viewModel: CredentialListViewModel
+  @State private var isInitializing = false
+  let didFinish: () -> Void
+
+  var body: some View {
+    VStack(spacing: 20) {
+      Image(systemName: "lock.shield")
+        .font(.system(size: 52))
+        .foregroundStyle(.tint)
+      Text("Your private vault")
+        .font(.title.bold())
+      Text(
+        "LocalVault stores your credentials only on this device. There is no account, cloud sync, or password recovery."
+      )
+      .multilineTextAlignment(.center)
+      .foregroundStyle(.secondary)
+      Text("If you lose this app or device without a backup, your credentials cannot be recovered.")
+        .multilineTextAlignment(.center)
+        .font(.footnote)
+        .foregroundStyle(.secondary)
+      Button("Create My Vault") {
+        Task {
+          isInitializing = true
+          if await viewModel.initializeVault() {
+            didFinish()
+          }
+          isInitializing = false
+        }
+      }
+      .buttonStyle(.borderedProminent)
+      .disabled(isInitializing)
+    }
+    .padding(32)
+    .frame(maxWidth: 520)
   }
 }
 
