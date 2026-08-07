@@ -17,6 +17,7 @@
 		5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437BB79A7F5422EDC71B5E2 /* ContentView.swift */; };
 		5A4B3177290AE9DB64F2428F /* KeychainVaultKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */; };
 		74F06E869818CC497B5F384D /* CredentialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5C1AD03141A481C6AC7CE2 /* CredentialDetailView.swift */; };
+		782481248ECB33BBB5A5BCE8 /* BackupEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B5A887797F8BDFF7A36797 /* BackupEnvelope.swift */; };
 		786BB0F5FE1706136AE767F2 /* CryptoKitVaultCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */; };
 		7A44C8A690AFE4B79E39C31E /* CredentialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD692770EAC7EC11429DAD55 /* CredentialListView.swift */; };
 		A963B4406CE7444EA4D1AD38 /* LocalVaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986220EADA94CBA484B003B /* LocalVaultTests.swift */; };
@@ -47,6 +48,7 @@
 		4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
 		6422821C3833831AABCF183C /* LocalVault.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LocalVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoKitVaultCryptoService.swift; sourceTree = "<group>"; };
+		67B5A887797F8BDFF7A36797 /* BackupEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEnvelope.swift; sourceTree = "<group>"; };
 		A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LocalVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedCredentialRepository.swift; sourceTree = "<group>"; };
 		AD692770EAC7EC11429DAD55 /* CredentialListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialListView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		256226563CA78BD9E4E1BBBD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				67B5A887797F8BDFF7A36797 /* BackupEnvelope.swift */,
 				0B7B71E450E7FF5987B4A066 /* Credential.swift */,
 				1CB8FA2B3CC016695856DF99 /* VaultError.swift */,
 				10E5A761C0D2ED382FF6CB5E /* VaultProtocols.swift */,
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782481248ECB33BBB5A5BCE8 /* BackupEnvelope.swift in Sources */,
 				5877BEB31D0DB8774F9BE20D /* ClipboardManager.swift in Sources */,
 				5915DACC2CCD49548F8273DF /* ContentView.swift in Sources */,
 				41BBE941C245482966C452E2 /* Credential.swift in Sources */,
