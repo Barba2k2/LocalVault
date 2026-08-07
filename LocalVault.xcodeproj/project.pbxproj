@@ -14,6 +14,8 @@
 		5A4B3177290AE9DB64F2428F /* KeychainVaultKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */; };
 		786BB0F5FE1706136AE767F2 /* CryptoKitVaultCryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */; };
 		A963B4406CE7444EA4D1AD38 /* LocalVaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986220EADA94CBA484B003B /* LocalVaultTests.swift */; };
+		B48774DE3AD0FBB8460DF824 /* VaultLockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CACDA4A8A4495A59B46B1 /* VaultLockController.swift */; };
+		BB8FC9BD0C6A3C390BC210BC /* LocalAuthenticationAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A6F683E060B6B6C943D58 /* LocalAuthenticationAuthenticator.swift */; };
 		DE1738CB79E0609ED27E7396 /* EncryptedCredentialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */; };
 		F8C83CEF8200892545514427 /* LocalVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */; };
 /* End PBXBuildFile section */
@@ -37,8 +39,10 @@
 		64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoKitVaultCryptoService.swift; sourceTree = "<group>"; };
 		A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedCredentialRepository.swift; sourceTree = "<group>"; };
+		B41A6F683E060B6B6C943D58 /* LocalAuthenticationAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationAuthenticator.swift; sourceTree = "<group>"; };
 		C8C6376D788EECC51B68F9ED /* LocalVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultApp.swift; sourceTree = "<group>"; };
 		C986220EADA94CBA484B003B /* LocalVaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultTests.swift; sourceTree = "<group>"; };
+		D12CACDA4A8A4495A59B46B1 /* VaultLockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultLockController.swift; sourceTree = "<group>"; };
 		F437BB79A7F5422EDC71B5E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +100,8 @@
 				64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */,
 				A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */,
 				38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */,
+				B41A6F683E060B6B6C943D58 /* LocalAuthenticationAuthenticator.swift */,
+				D12CACDA4A8A4495A59B46B1 /* VaultLockController.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -193,8 +199,10 @@
 				786BB0F5FE1706136AE767F2 /* CryptoKitVaultCryptoService.swift in Sources */,
 				DE1738CB79E0609ED27E7396 /* EncryptedCredentialRepository.swift in Sources */,
 				5A4B3177290AE9DB64F2428F /* KeychainVaultKeyStore.swift in Sources */,
+				BB8FC9BD0C6A3C390BC210BC /* LocalAuthenticationAuthenticator.swift in Sources */,
 				F8C83CEF8200892545514427 /* LocalVaultApp.swift in Sources */,
 				5092B96121CBC9B96ED64232 /* VaultError.swift in Sources */,
+				B48774DE3AD0FBB8460DF824 /* VaultLockController.swift in Sources */,
 				2D5A36E93E65E2C14CE9483E /* VaultProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

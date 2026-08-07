@@ -8,6 +8,7 @@ enum VaultError: Error, Equatable, Sendable {
   case keyUnavailable
   case invalidKeyLength
   case authenticationFailed
+  case authenticationUnavailable
   case corruptedCiphertext
   case encryptionFailed
   case invalidStoredData
