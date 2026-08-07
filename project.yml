@@ -2,7 +2,7 @@ name: LocalVault
 options:
   bundleIdPrefix: com.barba
   deploymentTarget:
-    macOS: "15.0"
+    iOS: "17.0"
 settings:
   base:
     SWIFT_VERSION: "6.0"
@@ -13,7 +13,7 @@ settings:
 targets:
   LocalVault:
     type: application
-    platform: macOS
+    platform: iOS
     sources:
       - path: LocalVault
         type: group
@@ -28,7 +28,7 @@ targets:
         - LocalVaultTests
   LocalVaultTests:
     type: bundle.unit-test
-    platform: macOS
+    platform: iOS
     sources:
       - path: LocalVaultTests
     dependencies:
