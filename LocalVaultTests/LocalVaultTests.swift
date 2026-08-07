@@ -190,15 +190,23 @@ struct LocalVaultTests {
 
   @Test func encryptedBackupRejectsCorruptedPayload() throws {
     let service = EncryptedBackupService()
-    var backup = try service.makeBackup(
+    let backup = try service.makeBackup(
       from: [Credential(title: "Example", password: "secret")],
       password: "correct horse"
     )
-    backup[backup.index(before: backup.endIndex)] ^= 0x01
+    let envelope = try JSONDecoder().decode(BackupEnvelope.self, from: backup)
+    var corruptedCiphertext = envelope.ciphertext
+    corruptedCiphertext[corruptedCiphertext.startIndex] ^= 0x01
+    let corruptedEnvelope = try BackupEnvelope(
+      salt: envelope.salt,
+      nonce: envelope.nonce,
+      ciphertext: corruptedCiphertext
+    )
+    let corruptedBackup = try JSONEncoder().encode(corruptedEnvelope)
 
     var rejected = false
     do {
-      _ = try service.restoreCredentials(from: backup, password: "correct horse")
+      _ = try service.restoreCredentials(from: corruptedBackup, password: "correct horse")
     } catch BackupServiceError.authenticationFailed, BackupServiceError.invalidBackup {
       rejected = true
     } catch {
