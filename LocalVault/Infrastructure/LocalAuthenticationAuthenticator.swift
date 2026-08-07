@@ -1,6 +1,7 @@
 import Foundation
 import LocalAuthentication
 
+@MainActor
 struct LocalAuthenticationAuthenticator: BiometricAuthenticator {
   func authenticate(reason: String) async throws {
     let context = LAContext()
