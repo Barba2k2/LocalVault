@@ -249,6 +249,8 @@ private actor TestCredentialRepository: CredentialRepository {
 
   func initialize() async throws {}
 
+  func deleteVault() async throws {}
+
   func list() async throws -> [Credential] {
     credentials
   }

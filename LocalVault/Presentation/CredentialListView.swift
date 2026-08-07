@@ -2,8 +2,10 @@ import SwiftUI
 
 struct CredentialListView: View {
   @EnvironmentObject private var viewModel: CredentialListViewModel
+  @EnvironmentObject private var lockController: VaultLockController
   @AppStorage("hasCompletedVaultOnboarding") private var hasCompletedOnboarding = false
   @State private var showNewCredential = false
+  @State private var showSettings = false
 
   var body: some View {
     NavigationSplitView {
@@ -49,6 +51,11 @@ struct CredentialListView: View {
             showNewCredential = true
           }
         }
+        ToolbarItem(placement: .secondaryAction) {
+          Button("Settings", systemImage: "gear") {
+            showSettings = true
+          }
+        }
       }
     } detail: {
       ContentUnavailableView(
@@ -59,6 +66,9 @@ struct CredentialListView: View {
     }
     .sheet(isPresented: $showNewCredential) {
       CredentialEditorView()
+    }
+    .sheet(isPresented: $showSettings) {
+      SettingsView()
     }
     .task {
       await viewModel.refresh()

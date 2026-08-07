@@ -67,6 +67,20 @@ final class CredentialListViewModel: ObservableObject {
     return false
   }
 
+  func deleteVault() async -> Bool {
+    do {
+      try await repository.deleteVault()
+      credentials = []
+      error = nil
+      return true
+    } catch let vaultError as VaultError {
+      error = vaultError
+    } catch {
+      self.error = .persistenceFailure
+    }
+    return false
+  }
+
   func save(_ credential: Credential) async -> Bool {
     let normalizedTitle = credential.title.trimmingCharacters(in: .whitespacesAndNewlines)
     guard !normalizedTitle.isEmpty else {
