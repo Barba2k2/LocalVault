@@ -6,6 +6,12 @@ struct CredentialEditorView: View {
 
   @State private var credential: Credential
   @State private var isSaving = false
+  @State private var passwordLength = 20
+  @State private var includeUppercase = true
+  @State private var includeLowercase = true
+  @State private var includeNumbers = true
+  @State private var includeSymbols = true
+  @State private var generatorError = false
 
   private let isNew: Bool
 
@@ -28,6 +34,31 @@ struct CredentialEditorView: View {
               get: { credential.url?.absoluteString ?? "" },
               set: { credential.url = URL(string: $0) }
             ))
+        }
+
+        Section("Password Generator") {
+          Stepper("Length: \(passwordLength)", value: $passwordLength, in: 8...128)
+          Toggle("Uppercase", isOn: $includeUppercase)
+          Toggle("Lowercase", isOn: $includeLowercase)
+          Toggle("Numbers", isOn: $includeNumbers)
+          Toggle("Symbols", isOn: $includeSymbols)
+          Button("Generate Password", systemImage: "wand.and.stars") {
+            do {
+              credential.password = try PasswordGenerator().generate(
+                length: passwordLength,
+                includeUppercase: includeUppercase,
+                includeLowercase: includeLowercase,
+                includeNumbers: includeNumbers,
+                includeSymbols: includeSymbols
+              )
+              generatorError = false
+            } catch {
+              generatorError = true
+            }
+          }
+          .alert("Choose at least one character set", isPresented: $generatorError) {
+            Button("OK", role: .cancel) {}
+          }
         }
 
         Section("Details") {

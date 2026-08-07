@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CD6DE2A5310547F1194A402 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */; };
 		2D5A36E93E65E2C14CE9483E /* VaultProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5A761C0D2ED382FF6CB5E /* VaultProtocols.swift */; };
 		35CE8D811B204500A1E44599 /* CredentialEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F052259945716F3890815A /* CredentialEditorView.swift */; };
 		41BBE941C245482966C452E2 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B71E450E7FF5987B4A066 /* Credential.swift */; };
@@ -43,6 +44,7 @@
 		1CB8FA2B3CC016695856DF99 /* VaultError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultError.swift; sourceTree = "<group>"; };
 		22C720B583198EA39B838778 /* CredentialListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialListViewModel.swift; sourceTree = "<group>"; };
 		38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainVaultKeyStore.swift; sourceTree = "<group>"; };
+		4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
 		6422821C3833831AABCF183C /* LocalVault.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LocalVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoKitVaultCryptoService.swift; sourceTree = "<group>"; };
 		A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LocalVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 				A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */,
 				38C0629653EAD434C60CE931 /* KeychainVaultKeyStore.swift */,
 				B41A6F683E060B6B6C943D58 /* LocalAuthenticationAuthenticator.swift */,
+				4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */,
 				D12CACDA4A8A4495A59B46B1 /* VaultLockController.swift */,
 			);
 			path = Infrastructure;
@@ -240,6 +243,7 @@
 				5A4B3177290AE9DB64F2428F /* KeychainVaultKeyStore.swift in Sources */,
 				BB8FC9BD0C6A3C390BC210BC /* LocalAuthenticationAuthenticator.swift in Sources */,
 				F8C83CEF8200892545514427 /* LocalVaultApp.swift in Sources */,
+				1CD6DE2A5310547F1194A402 /* PasswordGenerator.swift in Sources */,
 				C798A9D9C1909C88D54C0902 /* SettingsView.swift in Sources */,
 				5092B96121CBC9B96ED64232 /* VaultError.swift in Sources */,
 				B48774DE3AD0FBB8460DF824 /* VaultLockController.swift in Sources */,

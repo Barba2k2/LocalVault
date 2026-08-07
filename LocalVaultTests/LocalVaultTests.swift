@@ -97,6 +97,38 @@ struct LocalVaultTests {
     #expect(rejectedKey)
   }
 
+  @Test func passwordGeneratorHonorsLengthAndCharacterSets() throws {
+    let password = try PasswordGenerator().generate(
+      length: 24,
+      includeUppercase: false,
+      includeLowercase: false,
+      includeNumbers: true,
+      includeSymbols: false
+    )
+
+    #expect(password.count == 24)
+    #expect(password.allSatisfy { PasswordGenerator.numbers.contains($0) })
+  }
+
+  @Test func passwordGeneratorRejectsEmptyCharacterSet() {
+    var rejected = false
+    do {
+      _ = try PasswordGenerator().generate(
+        length: 20,
+        includeUppercase: false,
+        includeLowercase: false,
+        includeNumbers: false,
+        includeSymbols: false
+      )
+    } catch PasswordGeneratorError.emptyCharacterSet {
+      rejected = true
+    } catch {
+      rejected = false
+    }
+
+    #expect(rejected)
+  }
+
   @Test func keychainStoreCreatesReadsAndDeletesVaultKey() throws {
     let store = KeychainVaultKeyStore(
       service: "com.barba.localvault.tests.\(UUID().uuidString)",
