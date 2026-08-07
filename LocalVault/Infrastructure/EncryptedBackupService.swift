@@ -13,17 +13,8 @@ enum BackupServiceError: Error, Equatable, Sendable {
 
 struct EncryptedBackupService: BackupService, Sendable {
   private static let keyLength = 32
-  private static let maximumCredentialCount = 100_000
 
   func makeBackup(from credentials: [Credential], password: String) throws -> Data {
-    guard credentials.count <= Self.maximumCredentialCount,
-      credentials.allSatisfy({
-        !$0.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-      })
-    else {
-      throw BackupServiceError.invalidBackup
-    }
-
     let plaintext: Data
     do {
       plaintext = try JSONEncoder().encode(credentials)
@@ -97,15 +88,7 @@ struct EncryptedBackupService: BackupService, Sendable {
         tag: tag
       )
       let plaintext = try AES.GCM.open(sealedBox, using: SymmetricKey(data: key))
-      let credentials = try JSONDecoder().decode([Credential].self, from: plaintext)
-      guard credentials.count <= Self.maximumCredentialCount,
-        credentials.allSatisfy({
-          !$0.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        })
-      else {
-        throw BackupServiceError.invalidBackup
-      }
-      return credentials
+      return try JSONDecoder().decode([Credential].self, from: plaintext)
     } catch DecodingError.dataCorrupted, DecodingError.keyNotFound, DecodingError.typeMismatch,
       DecodingError.valueNotFound
     {
