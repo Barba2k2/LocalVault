@@ -53,4 +53,49 @@ final class CredentialListViewModel: ObservableObject {
       self.error = .invalidStoredData
     }
   }
+
+  func save(_ credential: Credential) async -> Bool {
+    let normalizedTitle = credential.title.trimmingCharacters(in: .whitespacesAndNewlines)
+    guard !normalizedTitle.isEmpty else {
+      error = .invalidCredentialTitle
+      return false
+    }
+
+    let isExisting = credentials.contains { $0.id == credential.id }
+    let normalizedCredential = Credential(
+      id: credential.id,
+      title: normalizedTitle,
+      username: credential.username,
+      password: credential.password,
+      url: credential.url,
+      notes: credential.notes,
+      category: credential.category,
+      createdAt: credential.createdAt,
+      updatedAt: isExisting ? Date() : credential.updatedAt
+    )
+
+    do {
+      try await repository.save(normalizedCredential)
+      await refresh()
+      return true
+    } catch let vaultError as VaultError {
+      error = vaultError
+    } catch {
+      self.error = .persistenceFailure
+    }
+    return false
+  }
+
+  func delete(id: UUID) async -> Bool {
+    do {
+      try await repository.delete(id: id)
+      await refresh()
+      return true
+    } catch let vaultError as VaultError {
+      error = vaultError
+    } catch {
+      self.error = .persistenceFailure
+    }
+    return false
+  }
 }
