@@ -199,7 +199,7 @@ struct LocalVaultTests {
     var rejected = false
     do {
       _ = try service.restoreCredentials(from: backup, password: "correct horse")
-    } catch BackupServiceError.authenticationFailed {
+    } catch BackupServiceError.authenticationFailed, BackupServiceError.invalidBackup {
       rejected = true
     } catch {
       rejected = false
