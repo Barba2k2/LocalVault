@@ -18,10 +18,7 @@ struct LocalVaultApp: App {
       applicationSupport
       .appendingPathComponent("LocalVault", isDirectory: true)
       .appendingPathComponent("vault.localvault")
-    let repository = EncryptedCredentialRepository(
-      fileURL: vaultURL,
-      keyStore: KeychainVaultKeyStore()
-    )
+    let repository = EncryptedCredentialRepository(fileURL: vaultURL)
     _listViewModel = StateObject(wrappedValue: CredentialListViewModel(repository: repository))
   }
 

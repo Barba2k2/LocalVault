@@ -296,13 +296,7 @@ struct LocalVaultTests {
     try invalidData.write(to: fileURL)
     defer { try? FileManager.default.removeItem(at: directory) }
 
-    let repository = EncryptedCredentialRepository(
-      fileURL: fileURL,
-      keyStore: KeychainVaultKeyStore(
-        service: "com.barba.localvault.tests.\(UUID().uuidString)",
-        account: "vault-key"
-      )
-    )
+    let repository = EncryptedCredentialRepository(fileURL: fileURL)
     var rejectedVersion = false
     do {
       _ = try await repository.list()

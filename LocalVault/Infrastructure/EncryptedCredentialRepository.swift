@@ -16,7 +16,7 @@ actor EncryptedCredentialRepository: CredentialRepository {
   init(
     fileURL: URL,
     cryptoService: any VaultCryptoService = CryptoKitVaultCryptoService(),
-    keyStore: any KeychainStore
+    keyStore: any KeychainStore = KeychainVaultKeyStore()
   ) {
     self.fileURL = fileURL
     self.cryptoService = cryptoService
