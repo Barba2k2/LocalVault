@@ -18,6 +18,7 @@ let package = Package(
       exclude: [
         "LocalVaultApp.swift",
         "ContentView.swift",
+        "LocalVault.entitlements",
         "Application/CredentialListViewModel.swift",
         "Infrastructure/ClipboardManager.swift",
         "Infrastructure/KeychainVaultKeyStore.swift",
