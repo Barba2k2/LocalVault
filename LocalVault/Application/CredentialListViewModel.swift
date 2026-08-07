@@ -9,9 +9,14 @@ final class CredentialListViewModel: ObservableObject {
   @Published private(set) var error: VaultError?
 
   private let repository: any CredentialRepository
+  private let backupService: any BackupService
 
-  init(repository: any CredentialRepository) {
+  init(
+    repository: any CredentialRepository,
+    backupService: any BackupService = EncryptedBackupService()
+  ) {
     self.repository = repository
+    self.backupService = backupService
   }
 
   var visibleCredentials: [Credential] {
@@ -79,6 +84,11 @@ final class CredentialListViewModel: ObservableObject {
       self.error = .persistenceFailure
     }
     return false
+  }
+
+  func makeBackup(password: String) async throws -> Data {
+    let credentials = try await repository.list()
+    return try backupService.makeBackup(from: credentials, password: password)
   }
 
   func save(_ credential: Credential) async -> Bool {
