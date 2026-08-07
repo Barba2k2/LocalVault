@@ -3,6 +3,7 @@ import SwiftUI
 
 @main
 struct LocalVaultMacApp: App {
+  private static let appGroup = "group.com.barba.localvault"
   @Environment(\.openWindow) private var openWindow
   @StateObject private var lockController = VaultLockController(
     authenticator: LocalAuthenticationAuthenticator()
@@ -10,16 +11,18 @@ struct LocalVaultMacApp: App {
   @StateObject private var listViewModel: CredentialListViewModel
 
   init() {
-    let applicationSupport = FileManager.default.urls(
-      for: .applicationSupportDirectory,
-      in: .userDomainMask
-    )[0]
-    let vaultURL = applicationSupport
+    let container = FileManager.default.containerURL(
+      forSecurityApplicationGroupIdentifier: Self.appGroup
+    ) ?? FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+    let vaultURL = container
       .appendingPathComponent("LocalVault", isDirectory: true)
       .appendingPathComponent("macos-vault.localvault")
     let repository = EncryptedCredentialRepository(
       fileURL: vaultURL,
-      keyStore: KeychainVaultKeyStore(service: "com.barba.localvault.macos")
+      keyStore: KeychainVaultKeyStore(
+        service: "com.barba.localvault.macos",
+        accessGroup: Self.appGroup
+      )
     )
     _listViewModel = StateObject(wrappedValue: CredentialListViewModel(repository: repository))
   }

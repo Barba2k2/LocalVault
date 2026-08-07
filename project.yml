@@ -56,4 +56,25 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.barba.localvault.macos
         PRODUCT_NAME: LocalVault
         INFOPLIST_KEY_LSUIElement: YES
+        CODE_SIGN_ENTITLEMENTS: LocalVaultMac/LocalVaultMac.entitlements
         GENERATE_INFOPLIST_FILE: YES
+  LocalVaultMacAutoFill:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: LocalVault/Domain
+      - path: LocalVault/Infrastructure
+        excludes:
+          - ClipboardManager.swift
+          - LocalAuthenticationAuthenticator.swift
+          - VaultLockController.swift
+      - path: LocalVaultMacAutoFill
+        excludes:
+          - Info.plist
+          - LocalVaultMacAutoFill.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.barba.localvault.macos.autofill
+        PRODUCT_NAME: LocalVaultMacAutoFill
+        INFOPLIST_FILE: LocalVaultMacAutoFill/Info.plist
+        CODE_SIGN_ENTITLEMENTS: LocalVaultMacAutoFill/LocalVaultMacAutoFill.entitlements

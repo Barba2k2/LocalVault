@@ -11,13 +11,16 @@ struct KeychainVaultKeyStore: KeychainStore {
 
   private let service: String
   private let account: String
+  private let accessGroup: String?
 
   init(
     service: String = Bundle.main.bundleIdentifier ?? "com.barba.localvault",
-    account: String = "vault-key"
+    account: String = "vault-key",
+    accessGroup: String? = nil
   ) {
     self.service = service
     self.account = account
+    self.accessGroup = accessGroup
   }
 
   func readKey() throws -> Data? {
@@ -78,11 +81,15 @@ struct KeychainVaultKeyStore: KeychainStore {
   }
 
   private func baseQuery() -> [CFString: Any] {
-    [
+    var query: [CFString: Any] = [
       kSecClass: kSecClassGenericPassword,
       kSecAttrService: service,
       kSecAttrAccount: account,
     ]
+    if let accessGroup {
+      query[kSecAttrAccessGroup] = accessGroup
+    }
+    return query
   }
 
   private func query(returnData: Bool) -> [CFString: Any] {
