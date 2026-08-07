@@ -194,6 +194,35 @@ struct LocalVaultTests {
     #expect(controller.state == .locked)
     #expect(controller.isLocked)
   }
+
+  @MainActor
+  @Test func credentialListSortsAndSearchesWithoutExposingPassword() async {
+    let credentials = [
+      Credential(
+        title: "Zebra",
+        username: "z@example.com",
+        password: "hidden-z",
+        url: URL(string: "https://zebra.example"),
+        category: "Personal"
+      ),
+      Credential(
+        title: "Alpha",
+        username: "a@example.com",
+        password: "hidden-a",
+        url: URL(string: "https://work.example"),
+        category: "Work"
+      ),
+    ]
+    let viewModel = CredentialListViewModel(
+      repository: TestCredentialRepository(credentials: credentials))
+
+    await viewModel.refresh()
+    #expect(viewModel.visibleCredentials.map(\.title) == ["Alpha", "Zebra"])
+    #expect(viewModel.visibleCredentials.allSatisfy { !$0.password.isEmpty })
+
+    viewModel.query = "work"
+    #expect(viewModel.visibleCredentials.map(\.title) == ["Alpha"])
+  }
 }
 
 private struct TestAuthenticator: BiometricAuthenticator {
@@ -209,4 +238,24 @@ private struct TestAuthenticator: BiometricAuthenticator {
       throw VaultError.authenticationFailed
     }
   }
+}
+
+private actor TestCredentialRepository: CredentialRepository {
+  let credentials: [Credential]
+
+  init(credentials: [Credential]) {
+    self.credentials = credentials
+  }
+
+  func list() async throws -> [Credential] {
+    credentials
+  }
+
+  func find(id: UUID) async throws -> Credential? {
+    credentials.first { $0.id == id }
+  }
+
+  func save(_ credential: Credential) async throws {}
+
+  func delete(id: UUID) async throws {}
 }
