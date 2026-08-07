@@ -26,6 +26,17 @@ actor EncryptedCredentialRepository: CredentialRepository {
     try persist([])
   }
 
+  func deleteVault() async throws {
+    do {
+      try FileManager.default.removeItem(at: fileURL)
+      try keyStore.deleteKey()
+    } catch CocoaError.fileNoSuchFile {
+      try keyStore.deleteKey()
+    } catch {
+      throw VaultError.persistenceFailure
+    }
+  }
+
   func list() async throws -> [Credential] {
     try loadCredentials()
   }

@@ -3,6 +3,7 @@ import SwiftUI
 @main
 struct LocalVaultApp: App {
   @Environment(\.scenePhase) private var scenePhase
+  @AppStorage("autoLockSeconds") private var autoLockSeconds: Double = 0
   @StateObject private var lockController = VaultLockController(
     authenticator: LocalAuthenticationAuthenticator()
   )
@@ -29,7 +30,9 @@ struct LocalVaultApp: App {
     }
     .onChange(of: scenePhase) { _, phase in
       if phase == .background {
-        lockController.lock()
+        lockController.scheduleLock(after: autoLockSeconds)
+      } else if phase == .active {
+        lockController.cancelScheduledLock()
       }
     }
     .commands {
