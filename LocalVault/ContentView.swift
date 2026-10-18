@@ -11,7 +11,14 @@ struct ContentView: View {
         vaultContent
       }
     }
-    .frame(minWidth: 760, minHeight: 480)
+    #if os(macOS)
+      .frame(minWidth: 760, minHeight: 480)
+    #else
+      // Without an explicit fill the root collapses to zero size on iPhone and
+      // the whole app renders blank. The macOS minimum must not leak here: it
+      // forces 760pt on a ~400pt screen and clips the content.
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+    #endif
     .task {
       await lockController.unlock()
     }

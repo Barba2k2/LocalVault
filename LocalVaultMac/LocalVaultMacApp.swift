@@ -43,6 +43,12 @@ struct LocalVaultMacApp: App {
       ContentView()
         .environmentObject(lockController)
         .environmentObject(listViewModel)
+        .onAppear {
+          // LSUIElement apps never activate on their own, so the window is
+          // never key and text fields (including the LocalAuthentication
+          // password sheet) receive no keystrokes.
+          NSApplication.shared.activate(ignoringOtherApps: true)
+        }
     }
     .commands {
       SidebarCommands()

@@ -17,6 +17,10 @@
 		145B4D8CF2B8916CA158F5F6 /* CSVServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755063B99A783FB520DAE651 /* CSVServiceImpl.swift */; };
 		157607E8F86DD9C188A8157E /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */; };
 		1AAD84308B320476A3B0AF45 /* SharedVaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94E663126C57F8D9F899B7 /* SharedVaultConfiguration.swift */; };
+		FA709761DF008C4A6D674DA1 /* SecurityScopedFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C3101B72F7C2499AA7E364 /* SecurityScopedFileHelper.swift */; };
+		4B256E70CCDB89405ADE8403 /* SecurityScopedFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C3101B72F7C2499AA7E364 /* SecurityScopedFileHelper.swift */; };
+		04DDDDB05E4422CF6CB47B5B /* SecurityScopedFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C3101B72F7C2499AA7E364 /* SecurityScopedFileHelper.swift */; };
+		B4729821A164A9BF3DF8598A /* SecurityScopedFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C3101B72F7C2499AA7E364 /* SecurityScopedFileHelper.swift */; };
 		1CD6DE2A5310547F1194A402 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */; };
 		1E9FBAE965B7F924B84725D8 /* CredentialListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C720B583198EA39B838778 /* CredentialListViewModel.swift */; };
 		1EA595161B883F186A192C95 /* CSVDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3EB96F7CCCE6AF42D9B29 /* CSVDocument.swift */; };
@@ -122,20 +126,20 @@
 		3EE6D861444B2C1477170F82 /* BackupDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupDocument.swift; sourceTree = "<group>"; };
 		41A35468B909E419FABC0DF9 /* LocalVaultMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultMacApp.swift; sourceTree = "<group>"; };
 		4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
-		5004537E683908AC971ADD7F /* LocalVaultMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalVaultMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5004537E683908AC971ADD7F /* LocalVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		581F3213CBCBF0E12BA4FF61 /* EncryptedBackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedBackupService.swift; sourceTree = "<group>"; };
-		6422821C3833831AABCF183C /* LocalVault.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LocalVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6422821C3833831AABCF183C /* LocalVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D2070F40AEB631948182AE /* CryptoKitVaultCryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoKitVaultCryptoService.swift; sourceTree = "<group>"; };
 		67B5A887797F8BDFF7A36797 /* BackupEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEnvelope.swift; sourceTree = "<group>"; };
 		6FEDA289193D8EA3CDB24ED3 /* CSVExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExportView.swift; sourceTree = "<group>"; };
 		755063B99A783FB520DAE651 /* CSVServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVServiceImpl.swift; sourceTree = "<group>"; };
-		7C3694884D0360FBBC6F5A56 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		86E2D7D19B3BF836A5C9ED66 /* LocalVaultAutoFill.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = LocalVaultAutoFill.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C3694884D0360FBBC6F5A56 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		86E2D7D19B3BF836A5C9ED66 /* LocalVaultAutoFill.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LocalVaultAutoFill.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFB2AC61E928051E047DE9F /* BackupExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupExportView.swift; sourceTree = "<group>"; };
 		9F2F11D16231FA21961EC596 /* BackupImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupImportView.swift; sourceTree = "<group>"; };
 		A078F8DE02798AA30CA027AC /* AutoFillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFillViewController.swift; sourceTree = "<group>"; };
 		A0F3EB96F7CCCE6AF42D9B29 /* CSVDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDocument.swift; sourceTree = "<group>"; };
-		A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LocalVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57074B3ECD6CB9DD402E9AE /* CredentialIdentityIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialIdentityIndex.swift; sourceTree = "<group>"; };
 		A854E632873BD6F35073CCF8 /* LocalVaultMacAutoFill.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LocalVaultMacAutoFill.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8749A1A052861A59006826C /* EncryptedCredentialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedCredentialRepository.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		F437BB79A7F5422EDC71B5E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F5E9434BBFE856E458F155D5 /* LocalVaultMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalVaultMac.entitlements; sourceTree = "<group>"; };
 		FB94E663126C57F8D9F899B7 /* SharedVaultConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedVaultConfiguration.swift; sourceTree = "<group>"; };
+		A6C3101B72F7C2499AA7E364 /* SecurityScopedFileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityScopedFileHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -243,7 +248,7 @@
 			children = (
 				6422821C3833831AABCF183C /* LocalVault.app */,
 				86E2D7D19B3BF836A5C9ED66 /* LocalVaultAutoFill.appex */,
-				5004537E683908AC971ADD7F /* LocalVaultMac.app */,
+				5004537E683908AC971ADD7F /* LocalVault.app */,
 				A854E632873BD6F35073CCF8 /* LocalVaultMacAutoFill.appex */,
 				A0F4936180B08EDF65C9D5DE /* LocalVaultTests.xctest */,
 			);
@@ -280,6 +285,7 @@
 				B41A6F683E060B6B6C943D58 /* LocalAuthenticationAuthenticator.swift */,
 				4807BFEE64AB07C2146635D1 /* PasswordGenerator.swift */,
 				FB94E663126C57F8D9F899B7 /* SharedVaultConfiguration.swift */,
+				A6C3101B72F7C2499AA7E364 /* SecurityScopedFileHelper.swift */,
 				D12CACDA4A8A4495A59B46B1 /* VaultLockController.swift */,
 			);
 			path = Infrastructure;
@@ -302,7 +308,7 @@
 			packageProductDependencies = (
 			);
 			productName = LocalVaultMac;
-			productReference = 5004537E683908AC971ADD7F /* LocalVaultMac.app */;
+			productReference = 5004537E683908AC971ADD7F /* LocalVault.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4556A9020D598C5B1C43A6BA /* LocalVault */ = {
@@ -382,7 +388,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					216FE3E89C03E0BA10A105C3 = {
 						DevelopmentTeam = "";
@@ -452,6 +458,7 @@
 				A8969C7D39124E22320D4B88 /* KeychainVaultKeyStore.swift in Sources */,
 				C63AC910F0DED3A53446D874 /* PasswordGenerator.swift in Sources */,
 				326E86FE366A00A61FFA1F15 /* SharedVaultConfiguration.swift in Sources */,
+				FA709761DF008C4A6D674DA1 /* SecurityScopedFileHelper.swift in Sources */,
 				E99E043D356A9EC7906C1D44 /* VaultError.swift in Sources */,
 				BC54CBBB17CB55E8B88C3316 /* VaultProtocols.swift in Sources */,
 			);
@@ -495,6 +502,7 @@
 				B00529FF3A2975E85B90FB4E /* PasswordGenerator.swift in Sources */,
 				AABFC0C43421422CFB03F315 /* SettingsView.swift in Sources */,
 				1AAD84308B320476A3B0AF45 /* SharedVaultConfiguration.swift in Sources */,
+				4B256E70CCDB89405ADE8403 /* SecurityScopedFileHelper.swift in Sources */,
 				64549CD0A8EDB6CAB41D620D /* VaultError.swift in Sources */,
 				796CEBD3D2F395AB9CE62E52 /* VaultLockController.swift in Sources */,
 				F038DA22A7E3F8EB7B7FDA3B /* VaultProtocols.swift in Sources */,
@@ -518,6 +526,7 @@
 				ECBFF0CBAD1D96B7258C98DB /* LocalAuthenticationAuthenticator.swift in Sources */,
 				157607E8F86DD9C188A8157E /* PasswordGenerator.swift in Sources */,
 				D9F1A40A6A288E8569F26254 /* SharedVaultConfiguration.swift in Sources */,
+				04DDDDB05E4422CF6CB47B5B /* SecurityScopedFileHelper.swift in Sources */,
 				A8E0E6CED49FF59E5BF8F86C /* VaultError.swift in Sources */,
 				91A063AD3510A0739443DBD7 /* VaultProtocols.swift in Sources */,
 			);
@@ -554,6 +563,7 @@
 				1CD6DE2A5310547F1194A402 /* PasswordGenerator.swift in Sources */,
 				C798A9D9C1909C88D54C0902 /* SettingsView.swift in Sources */,
 				95907FBB0FBBBFF700114626 /* SharedVaultConfiguration.swift in Sources */,
+				B4729821A164A9BF3DF8598A /* SecurityScopedFileHelper.swift in Sources */,
 				5092B96121CBC9B96ED64232 /* VaultError.swift in Sources */,
 				B48774DE3AD0FBB8460DF824 /* VaultLockController.swift in Sources */,
 				2D5A36E93E65E2C14CE9483E /* VaultProtocols.swift in Sources */,
@@ -611,14 +621,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LocalVaultMac/LocalVaultMac.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Unlock your LocalVault";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.barba.localvault.macos;
 				PRODUCT_NAME = LocalVault;
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -629,14 +642,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LocalVaultMac/LocalVaultMac.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Unlock your LocalVault";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.barba.localvault.macos;
 				PRODUCT_NAME = LocalVault;
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -646,6 +662,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LocalVaultMacAutoFill/LocalVaultMacAutoFill.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = LocalVaultMacAutoFill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -654,6 +671,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.barba.localvault.macos.autofill;
 				PRODUCT_NAME = LocalVaultMacAutoFill;
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -666,6 +684,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Unlock your LocalVault";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,6 +704,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Unlock your LocalVault";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -701,6 +721,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LocalVaultMacAutoFill/LocalVaultMacAutoFill.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = LocalVaultMacAutoFill/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -709,6 +730,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.barba.localvault.macos.autofill;
 				PRODUCT_NAME = LocalVaultMacAutoFill;
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -717,6 +739,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -747,10 +770,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -764,6 +789,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.0;
@@ -793,6 +819,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -823,10 +850,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -847,6 +876,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
